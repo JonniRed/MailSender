@@ -6,9 +6,15 @@ using System.Net.Mail;
 
 namespace TestWPF
 {
+    public static class Varyable
+    {
+        public static string host = "smtp.yandex.ru";
+        public static int port = 25;
+    }
     
     public partial class MainWindow : Window
     {
+      
         public MainWindow() => InitializeComponent();
         
         private void OnSendButtonClick(object sender, RoutedEventArgs e)
@@ -27,9 +33,12 @@ namespace TestWPF
                     message.Body = message_body;
 
 
-                    const string host = "smtp.yandex.ru";
-                    const int port = 25;
-                    using (var client = new SmtpClient(host, port))
+                    ///const string host = "smtp.yandex.ru";
+                    ///const int port = 25;
+                    var h1 = Varyable.host;
+                    var p1 = Varyable.port;
+
+                    using (var client = new SmtpClient(h1, p1))
                     {
                         client.EnableSsl = true;
                         var user_name = UserNameEdit.Text;

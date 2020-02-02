@@ -19,8 +19,11 @@
             <MenuItem Header="Сервис"/>
             <MenuItem Header="Помощь"/>
         </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock Text="Всегда знаю, чего хочу, но редко понимаю, зачем"/>
+        </StatusBar>
         <TabControl>
-            <TabItem Header="Панель компоновки">
+            <!--<TabItem Header="Панель компоновки">
                 <TabControl TabStripPlacement="Left">
                     <TabItem Header="StackPanel">
                         <StackPanel Orientation="Vertical">
@@ -30,7 +33,7 @@
                             <TextBlock>Поле вывода текста</TextBlock>
                             <StackPanel Orientation="Horizontal">
                                 <CheckBox Margin="0, 0, 10, 0" VerticalContentAlignment="Center">Маркер</CheckBox>
-                                <Button Height="30">Кнопка 3</Button>
+                                <Button Height="30" Click="Button_Click_1">Кнопка 3</Button>
                                 <TextBox VerticalContentAlignment="Bottom">Что-то ещё</TextBox>
                             </StackPanel>
                         </StackPanel>
@@ -91,18 +94,22 @@
                         <UniformGrid>
                             <Grid>
                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">Какой-то диалог с пользователем</TextBlock>
-                                <UniformGrid HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                                <Border BorderBrush="Blue" BorderThickness="3">
+                                    <UniformGrid HorizontalAlignment="Right" VerticalAlignment="Bottom" 
                                              Rows="1" Margin="30, 20">
-                                    <Button Padding="50, 10" Margin="10, 0">OK</Button>
-                                    <Button Margin="10, 0">Cancel</Button>
-                                </UniformGrid>
+                                        <Button Padding="50, 10" Margin="10, 0">OK</Button>
+                                        <Button Margin="10, 0">Cancel</Button>
+                                    </UniformGrid>
+                                </Border>
                             </Grid>
                         </UniformGrid>
                     </TabItem>
                     <Grid Height="531" Width="703"/>
                 </TabControl>
-            </TabItem>
+            </TabItem>!-->
             <TabItem Header="Рассылка"></TabItem>
+            <TabItem Header="Планировщик"></TabItem>
+            <TabItem Header="Письма"></TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
 
