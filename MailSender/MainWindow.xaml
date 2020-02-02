@@ -5,12 +5,106 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="31*"/>
-        </Grid.ColumnDefinitions>
+        Title="Главное окно" Height="600" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать"/>
+                <MenuItem Header="Открыть"/>
+                <MenuItem Header="Закрыть"/>
+                <MenuItem Header="Сохранить"/>
+                <Separator/>
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Сервис"/>
+            <MenuItem Header="Помощь"/>
+        </Menu>
+        <TabControl>
+            <TabItem Header="Панель компоновки">
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="StackPanel">
+                        <StackPanel Orientation="Vertical">
+                            <Button Margin="10, 10, 10, 10" Padding="10, 10" BorderThickness="0.5" BorderBrush="Red" Background="Ivory">Кнопка1</Button>
+                            <Button>Кнопка2</Button>
+                            <TextBox>Поле ввода текста</TextBox>
+                            <TextBlock>Поле вывода текста</TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Margin="0, 0, 10, 0" VerticalContentAlignment="Center">Маркер</CheckBox>
+                                <Button Height="30">Кнопка 3</Button>
+                                <TextBox VerticalContentAlignment="Bottom">Что-то ещё</TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="DockPanel">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Top">Кнопка</Button>
+                            <Button DockPanel.Dock="Right">Кнопка</Button>
+                            <Button>Кнопка</Button>
+                            <Button DockPanel.Dock="Bottom">Кнопка</Button>
+                            <Rectangle Fill="LightCoral" StrokeThickness="2" RadiusX="30" RadiusY="30"></Rectangle>
+                        </DockPanel>
+                    </TabItem>
+                    <TabItem Header="Grid">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="480*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="613*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button>Кнопка 1</Button>
+                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">Кнопка 2</Button>
+                            <Button Grid.Column="0" Grid.Row="1" Click="Button_Click">
+                                <TextBlock Text="Кнопка 3 с очень длинной надписью">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-90"></RotateTransform>
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Button>
+                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50, 30">Кнопка 4</Button>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Canvas">
+                        <Canvas>
+                            <Button Canvas.Top="30" Canvas.Left="50" Padding="50, 30">Кнопка</Button>
+                            <TextBox Width="300" Canvas.Bottom="10" Canvas.Right="5">Поле ввода текста</TextBox>
+                            <Border Canvas.Top="20" Canvas.Right="20" BorderBrush="Indigo" BorderThickness="2">
+                                <InkCanvas Height="100" Width="100" ></InkCanvas>
+                            </Border>
+                        </Canvas>
+                    </TabItem>
+                    <TabItem Header="WrapPanel">
+                        <WrapPanel Orientation="Vertical">
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                            <Button Padding="50, 10" Margin="10,5">Кнопка</Button>
+                        </WrapPanel>
+                    </TabItem>
+                    <TabItem Header="UniformGrid">
+                        <UniformGrid>
+                            <Grid>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">Какой-то диалог с пользователем</TextBlock>
+                                <UniformGrid HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                                             Rows="1" Margin="30, 20">
+                                    <Button Padding="50, 10" Margin="10, 0">OK</Button>
+                                    <Button Margin="10, 0">Cancel</Button>
+                                </UniformGrid>
+                            </Grid>
+                        </UniformGrid>
+                    </TabItem>
+                    <Grid Height="531" Width="703"/>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Рассылка"></TabItem>
+            <TabItem Header="Статистика"></TabItem>
+        </TabControl>
 
-    </Grid>
+    </DockPanel>
 </Window>
