@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="800">
@@ -115,8 +116,12 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
                             <ComboBox Width="150"></ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
+                            <Button ToolTip="Добавить">
+                                    <Image Height="17" Source="Media\Mail-Add-icon.png"></Image>
+                            </Button>     
+                            <Button ToolTip="Редактировать">
+                                <Image Height="17" Source="Media\61776.png"></Image>
+                            </Button>
                             <Button>Удалить</Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
