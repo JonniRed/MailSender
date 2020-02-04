@@ -19,12 +19,8 @@
             <MenuItem Header="Сервис"/>
             <MenuItem Header="Помощь"/>
         </Menu>
-
-        <StatusBar DockPanel.Dock="Bottom">
-            <TextBlock Text="Я точно знаю, чего хочу, но не знаю, зачем (с)."></TextBlock>
-        </StatusBar>
         <TabControl>
-            <!--<TabItem Header="Панель компоновки">
+            <TabItem Header="Панель компоновки">
                 <TabControl TabStripPlacement="Left">
                     <TabItem Header="StackPanel">
                         <StackPanel Orientation="Vertical">
@@ -105,40 +101,8 @@
                     </TabItem>
                     <Grid Height="531" Width="703"/>
                 </TabControl>
-            </TabItem>-->
-            <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <ToolBarTray>
-                        <ToolBar Header="Отправители">
-                            <ComboBox Width="150"></ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
-                        </ToolBar>
-                        <ToolBar Header="Сервера" Band="1">
-                            <ComboBox Width="150"></ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
-                        </ToolBar>
-                        <ToolBar Header="Получатели" Band="1">
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
-                        </ToolBar>
-                        <ToolBar>
-                            <Button>Перейти в планировщик</Button>
-                        </ToolBar>
-                    </ToolBarTray>
-                    <GroupBox Grid.Row="1" Header="Получатели писем"></GroupBox>
-                </Grid>
             </TabItem>
-            <TabItem Header="Планировщик"></TabItem>
-            <TabItem Header="Письма"></TabItem>
+            <TabItem Header="Рассылка"></TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
 
