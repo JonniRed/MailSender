@@ -126,20 +126,45 @@
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
                             <ComboBox Width="150"></ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
+                            <Button ToolTip="Добавить">
+                                <fa:ImageAwesome Height="12" Icon="Plus" Foreground="Green"/>
+                            </Button>
+                            <Button ToolTip="Редактирование">
+                                <fa:ImageAwesome Height="12" Icon="Edit" Foreground="Orchid"/>
+                            </Button>
+                            <Button ToolTip="Добавить">
+                                <fa:ImageAwesome Height="12" Icon="Trash" Foreground="Red"/>
+                            </Button>
                         </ToolBar>
                         <ToolBar Header="Получатели" Band="1">
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
+                            <Button ToolTip="Добавить">
+                                <fa:ImageAwesome Height="12" Icon="Plus" Foreground="Green"/>
+                            </Button>
+                            <Button ToolTip="Редактирование">
+                                <fa:ImageAwesome Height="12" Icon="Edit" Foreground="Orchid"/>
+                            </Button>
+                            <Button ToolTip="Добавить">
+                                <fa:ImageAwesome Height="12" Icon="Trash" Foreground="Red"/>
+                            </Button>
                         </ToolBar>
                         <ToolBar>
-                            <Button>Перейти в планировщик</Button>
+                            <Button>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Перейти в планировщик" />
+                                    <fa:ImageAwesome Height="12" Icon="ClockOutline" Margin="3,0,0,0" Foreground="LawnGreen" />
+                                </StackPanel>
+                            </Button>
                         </ToolBar>
                     </ToolBarTray>
-                    <GroupBox Grid.Row="1" Header="Получатели писем"></GroupBox>
+                    <GroupBox Grid.Row="1" Header="Получатели писем">
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" />
+                                <DataGridTextColumn Header="Имя" Width="*" />
+                                <DataGridTextColumn Header="Адрес" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Планировщик"></TabItem>
