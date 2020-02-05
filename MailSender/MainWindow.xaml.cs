@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MailSender.lib.Data;
 
 namespace MailSender
 {
@@ -23,11 +24,9 @@ namespace MailSender
         public MainWindow()
         {
             InitializeComponent();
+            //SenderList.ItemsSource = TestData.Senders;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

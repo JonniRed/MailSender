@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="800">
@@ -115,7 +116,8 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
-                            <ComboBox Width="150"></ComboBox>
+                            <ComboBox Width="150" Name="SenderList"
+                                      ItemsSource="{x:Static data:TestData.Senders}"/>
                             <Button ToolTip="Добавить">
                                     <Image Height="17" Source="Media\Mail-Add-icon.png"></Image>
                             </Button>     
