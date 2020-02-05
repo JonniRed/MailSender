@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
+        xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="800">
@@ -117,7 +118,8 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
                             <ComboBox Width="150" Name="SenderList"
-                                      ItemsSource="{x:Static data:TestData.Senders}"/>
+                                      ItemsSource="{x:Static data:TestData.Senders}" 
+                                      DisplayMemberPath="Name" SelectedIndex="0"/>
                             <Button ToolTip="Добавить">
                                     <Image Height="17" Source="Media\Mail-Add-icon.png"></Image>
                             </Button>     
@@ -127,7 +129,19 @@
                             <Button>Удалить</Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
-                            <ComboBox Width="150"></ComboBox>
+                            <ComboBox Width="150" 
+                                      ItemsSource="{x:Static data:TestData.Servers}" SelectedIndex="0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="entities:Server">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Padding="0,0,3,0"/>
+                                            <TextBlock Text="{Binding Adress}" Opacity="0.6" Padding="0,0,3,0"/>
+                                            <TextBlock>:</TextBlock>
+                                            <TextBlock Text="{Binding Port}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>/>
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="Green"/>
                             </Button>
@@ -150,12 +164,16 @@
                             </Button>
                         </ToolBar>
                         <ToolBar>
+                          <!--  <ToolBar.Resources>
+                                <entities:Sender x:Key="Test" Name="QWE" Adress="ASD"></entities:Sender>
+                            </ToolBar.Resources>-->
                             <Button>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Перейти в планировщик" />
                                     <fa:ImageAwesome Height="12" Icon="ClockOutline" Margin="3,0,0,0" Foreground="LawnGreen" />
                                 </StackPanel>
                             </Button>
+                          <!--  <TextBlock Text="{Binding Source={StaticResource Test}}"/>-->
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
