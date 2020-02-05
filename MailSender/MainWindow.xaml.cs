@@ -25,8 +25,19 @@ namespace MailSender
         {
             InitializeComponent();
             //SenderList.ItemsSource = TestData.Senders;
+
         }
 
-        
+        private void Button_click_pl(object sender, RoutedEventArgs e)
+        {
+            test.SelectedItem = pl;
+            pl.Visibility = Visibility;
+        }
+
+        private void Click_button_send(object sender, RoutedEventArgs e)
+        {
+            
+            if (TextLetter.Text == "") MessageBox.Show("Введите текст");
+        }
     }
 }

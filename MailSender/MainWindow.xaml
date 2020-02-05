@@ -26,7 +26,7 @@
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock Text="Я точно знаю, чего хочу, но не знаю, зачем (с)."></TextBlock>
         </StatusBar>
-        <TabControl>
+        <TabControl x:Name="test">
             <!--<TabItem Header="Панель компоновки">
                 <TabControl TabStripPlacement="Left">
                     <TabItem Header="StackPanel">
@@ -141,7 +141,7 @@
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
-                            </ComboBox>/>
+                            </ComboBox>
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="Green"/>
                             </Button>
@@ -167,7 +167,7 @@
                           <!--  <ToolBar.Resources>
                                 <entities:Sender x:Key="Test" Name="QWE" Adress="ASD"></entities:Sender>
                             </ToolBar.Resources>-->
-                            <Button>
+                            <Button Click="Button_click_pl">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Перейти в планировщик" />
                                     <fa:ImageAwesome Height="12" Icon="ClockOutline" Margin="3,0,0,0" Foreground="LawnGreen" />
@@ -187,7 +187,7 @@
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Планировщик">
+            <TabItem Name="pl" Header="Планировщик">
                 <DockPanel>
                     <GroupBox Header="Управление">
                         <StackPanel>
@@ -270,10 +270,15 @@
                             <GroupBox DockPanel.Dock="Top" Header="Тема">
                                 <TextBox Text="Текст заголовка письма" />
                             </GroupBox>
-                            <GroupBox Header="Текст письма">
-                                <TextBox TextWrapping="Wrap" AcceptsReturn="True">Текст тела письма</TextBox>
+                            <GroupBox DockPanel.Dock="Top" Header="Текст письма">
+                                
+                                    <StackPanel>
+                                    <TextBox Name ="TextLetter" AcceptsReturn="True" Height="250"></TextBox>
+                                    <Button Name="Send" Click="Click_button_send">Отправить</Button>
+
+                                </StackPanel>
                             </GroupBox>
-                            
+                           
                         </DockPanel>
                     </GroupBox>
                 </Grid>
