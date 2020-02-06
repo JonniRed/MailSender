@@ -271,11 +271,9 @@
                                 <TextBox Text="Текст заголовка письма" />
                             </GroupBox>
                             <GroupBox DockPanel.Dock="Top" Header="Текст письма">
-                                
-                                    <StackPanel>
+                                <StackPanel>
                                     <TextBox Name ="TextLetter" AcceptsReturn="True" Height="250"></TextBox>
-                                    <Button Name="Send" Click="Click_button_send">Отправить</Button>
-
+                                    <Button Click="Click_button_send">Отправить</Button>
                                 </StackPanel>
                             </GroupBox>
                            
