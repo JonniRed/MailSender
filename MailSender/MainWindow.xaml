@@ -120,13 +120,15 @@
                             <ComboBox Width="150" Name="SenderList"
                                       ItemsSource="{x:Static data:TestData.Senders}" 
                                       DisplayMemberPath="Name" SelectedIndex="0"/>
-                            <Button ToolTip="Добавить">
-                                    <Image Height="17" Source="Media\Mail-Add-icon.png"></Image>
-                            </Button>     
-                            <Button ToolTip="Редактировать">
-                                <Image Height="17" Source="Media\61776.png"></Image>
+                            <Button Width="25" ToolTip="Добавить" Click="OnSenderEditClick">
+                                <Image Height="17" Source="Media\Mail-Add-icon.png"/>
                             </Button>
-                            <Button>Удалить</Button>
+                            <Button Width="25" ToolTip="Редактировать">
+                                <Image Height="17" Source="Media\61776.png"/>
+                            </Button>
+                            <Button Width="25" ToolTip="Удалить">
+                                <Image Height="19" Source="\Media\trash.png"/>
+                            </Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
                             <ComboBox Width="150" Name="ServersList"
@@ -272,7 +274,7 @@
                     <GroupBox Header="Выбранное письмо" Grid.Column="1">
                         <DockPanel>
                             <GroupBox DockPanel.Dock="Top" Header="Тема">
-                                <TextBox Text="Текст заголовка письма" Name="MailHeader" TextChanged="TextBox_TextChanged" />
+                                <TextBox Text="Текст заголовка письма" Name="MailHeader" />
                             </GroupBox>
                             <GroupBox DockPanel.Dock="Top" Header="Текст письма">
                                 <StackPanel>

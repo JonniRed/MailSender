@@ -56,6 +56,16 @@ namespace MailSender
             mail_sender.Send(MailHeader.Text, MailBody.Text, sender.Adress, recipient.Adress);
         }
 
-        
+        private void OnSenderEditClick(object Sender, RoutedEventArgs e)
+        {
+            var sender = SenderList.SelectedItem as Sender;
+            if (sender is null) return;
+
+            var dialog = new SenderEditor(sender);
+
+            if (dialog.ShowDialog() != true) return;
+            sender.Name = dialog.NameValue;
+            sender.Adress = dialog.AdressValue;
+        }
     }
 }
