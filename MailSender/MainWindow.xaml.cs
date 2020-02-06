@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MailSender.lib.Data;
+using MailSender.lib.Entities;
+using MailSender.lib.Services;
+using MailSender.lib.Service;
+
 
 namespace MailSender
 {
@@ -37,7 +41,21 @@ namespace MailSender
         private void Click_button_send(object sender, RoutedEventArgs e)
         {
             
-            if (TextLetter.Text == "") MessageBox.Show("Введите текст");
+            if (MailBody.Text == "") MessageBox.Show("Введите текст");
         }
+
+        private void OnSendButton(object Sender, RoutedEventArgs e)
+        {
+            var recipient = RecipientsList.SelectedItem as Recipient;
+            var sender = SenderList.SelectedItem as Sender;
+            var server = ServersList.SelectedItem as Server;
+
+            if (recipient == null || sender == null || server == null) return;
+
+            var mail_sender = new DebugMailSender(server.Adress, server.Port, server.UseSsl, server.Login, server.Password.Decode(3));
+            mail_sender.Send(MailHeader.Text, MailBody.Text, sender.Adress, recipient.Adress);
+        }
+
+        
     }
 }

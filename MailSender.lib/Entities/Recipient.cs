@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MailSender.lib.Entities
 {
-    class Pecipient
+    public class Recipient
     {
         public string Name { get; set; }
         public string Adress { get; set; }
-        public override string ToString() => $"{Name}:{Adress}";
+        
     }
 }
 

@@ -21,6 +21,13 @@ namespace MailSender.lib.Data
             new Sender {Name = "Петров", Adress = "petrov@server.ru"},
              new Sender {Name = "Сидоров", Adress = "sidorov@server.ru"}
         };
-                
+
+        public static List<Recipient> Recipient { get; } = new List<Recipient>
+        {
+            new Recipient {Name = "Иванов", Adress = "ivanov@server.ru"},
+            new Recipient {Name = "Петров", Adress = "petrov@server.ru"},
+            new Recipient {Name = "Сидоров", Adress = "sidorov@server.ru"}
+        };
+
     }
 }

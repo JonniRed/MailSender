@@ -129,7 +129,7 @@
                             <Button>Удалить</Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
-                            <ComboBox Width="150" 
+                            <ComboBox Width="150" Name="ServersList"
                                       ItemsSource="{x:Static data:TestData.Servers}" SelectedIndex="0">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate DataType="entities:Server">
@@ -142,15 +142,15 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <Button ToolTip="Добавить">
+                                <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="Green"/>
-                            </Button>
-                            <Button ToolTip="Редактирование">
+                                </Button>
+                                <Button ToolTip="Редактирование">
                                 <fa:ImageAwesome Height="12" Icon="Edit" Foreground="Orchid"/>
-                            </Button>
-                            <Button ToolTip="Добавить">
+                                 </Button>
+                                 <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Trash" Foreground="Red"/>
-                            </Button>
+                                </Button>
                         </ToolBar>
                         <ToolBar Header="Получатели" Band="1">
                             <Button ToolTip="Добавить">
@@ -177,11 +177,15 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
-                        <DataGrid>
+                        <DataGrid ItemsSource="{x:Static data:TestData.Recipient}" 
+                                  Name="RecipientsList"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True" VerticalGridLinesBrush="Gray" GridLinesVisibility="Vertical"
+                                  AlternatingRowBackground="LightGray">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="id" />
-                                <DataGridTextColumn Header="Имя" Width="*" />
-                                <DataGridTextColumn Header="Адрес" />
+                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" />
+                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
@@ -200,7 +204,7 @@
                                         <TextBlock HorizontalAlignment="Center">Запланировать</TextBlock>
                                     </DockPanel>
                                 </Button>
-                                <Button>
+                                <Button HorizontalAlignment="Stretch" Click="OnSendButton">
                                     <DockPanel Margin="20,0">
                                         <fa:ImageAwesome DockPanel.Dock="Right" Height="12" Icon="Send" />
                                         <TextBlock HorizontalAlignment="Stretch">Отправить</TextBlock>
@@ -222,7 +226,7 @@
                                 </GroupBox>          
                             </ListBoxItem>
                             <ListBoxItem HorizontalContentAlignment="Stretch">
-                                <GroupBox Header="Задание 1">
+                                <GroupBox Header="Задание 2">
                                     <StackPanel>
                                         <TextBlock Text="Время" />
                                         <TextBlock Text="Сервер" />
@@ -232,7 +236,7 @@
                                 </GroupBox>
                             </ListBoxItem>
                             <ListBoxItem HorizontalContentAlignment="Stretch">
-                                <GroupBox Header="Задание 1">
+                                <GroupBox Header="Задание 3">
                                     <StackPanel>
                                         <TextBlock Text="Время" />
                                         <TextBlock Text="Сервер" />
@@ -268,11 +272,11 @@
                     <GroupBox Header="Выбранное письмо" Grid.Column="1">
                         <DockPanel>
                             <GroupBox DockPanel.Dock="Top" Header="Тема">
-                                <TextBox Text="Текст заголовка письма" />
+                                <TextBox Text="Текст заголовка письма" Name="MailHeader" TextChanged="TextBox_TextChanged" />
                             </GroupBox>
                             <GroupBox DockPanel.Dock="Top" Header="Текст письма">
                                 <StackPanel>
-                                    <TextBox Name ="TextLetter" AcceptsReturn="True" Height="250"></TextBox>
+                                    <TextBox Name="MailBody" AcceptsReturn="True" Height="250"></TextBox>
                                     <Button Click="Click_button_send">Отправить</Button>
                                 </StackPanel>
                             </GroupBox>
