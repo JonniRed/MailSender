@@ -6,6 +6,7 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="800">
@@ -202,6 +203,7 @@
                             <StackPanel>
                                 <Button>
                                     <DockPanel Margin="20,0">
+                                        <xctk:TimePicer> </xctk:TimePicer>
                                         <fa:ImageAwesome DockPanel.Dock="Right" Height="12" Icon="ClockOutline" />
                                         <TextBlock HorizontalAlignment="Center">Запланировать</TextBlock>
                                     </DockPanel>

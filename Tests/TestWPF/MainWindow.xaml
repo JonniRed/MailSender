@@ -6,15 +6,28 @@
         xmlns:local="clr-namespace:TestWPF"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="850">
+        xmlns:vm="clr-namespace:TestWPF.ViewModels"
+        Title="{Binding Title}" Height="450" Width="850">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="314,279,0,0" VerticalAlignment="Top" Height="55" Width="225" Click="OnSendButtonClick"/>
-        <TextBox x:Name="UserNameEdit"
-            HorizontalAlignment="Left" Margin="139,196,0,0" Text="UserName" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="21"/>
-        <PasswordBox x:Name="PasswordEdit"
-            HorizontalAlignment="Left" Margin="564,196,0,0" VerticalAlignment="Top" Width="225" Height="21" Password="password"/>
-        <TextBlock HorizontalAlignment="Left" Margin="139,129,0,0" Text="Имя пользователя" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="225"/>
-        <TextBlock HorizontalAlignment="Left" Margin="583,129,0,0" Text="Пароль" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="206"/>
-        <xctk:ColorPicker VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <StackPanel>
+            <TextBlock Text="{Binding Title}"/>
+            <TextBox Text="{Binding TestValue}" HorizontalAlignment="Left" Width="300"/>
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="300"/>
+            <Slider Minimum="0" Maximum="360" Value="{Binding TestValue}"/>
+            <Slider Minimum="0" Maximum="500" Value="{Binding X}"/>
+            <Slider Minimum="0" Maximum="500" Value="{Binding Y}"/>
+        </StackPanel>
+        <Ellipse RenderTransformOrigin="0.5,0.5" Margin="246,84,300,228" Fill="Navy" Stroke="Violet" StrokeThickness="3">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="{Binding TestValue}"/>
+                    <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            
+        </Ellipse>
     </Grid>
 </Window>
