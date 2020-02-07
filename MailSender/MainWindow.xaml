@@ -7,6 +7,7 @@
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="800">
     <DockPanel>
@@ -198,7 +199,7 @@
                     <GroupBox Header="Управление">
                         <StackPanel>
                             <TextBlock Text="Календарь" />
-                            <Calendar/>
+                            <xctk:TimePicker/>
                             <StackPanel>
                                 <Button>
                                     <DockPanel Margin="20,0">
