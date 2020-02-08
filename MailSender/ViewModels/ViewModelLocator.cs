@@ -12,6 +12,8 @@ namespace MailSender.ViewModels
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<MainWindowViewModel>();
         }
+        public MainWindowViewModel MainWindowModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
     }
 }
