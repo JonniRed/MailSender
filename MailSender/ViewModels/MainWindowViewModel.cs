@@ -22,7 +22,13 @@ namespace MailSender.ViewModels
         {   
             get => _Recipients;
             private set => Set(ref _Recipients, value);
-        } 
+        }
+        private Recipient _SelectedRecipient;
+        public Recipient SelectedRecipient
+        {
+            get => _SelectedRecipient;
+            set => Set(ref _SelectedRecipient, value);
+        }
         public MainWindowViewModel(RecipientsManager RecipientManager)
         {
             _RecipientManager = RecipientManager;
