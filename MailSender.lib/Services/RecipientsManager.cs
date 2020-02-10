@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MailSender.lib.Services;
+using MailSender.lib.Services.Interfaces;
 using MailSender.lib.Entities;
 
 namespace MailSender.lib.Services
 {
-    public class RecipientsManager
+    public class RecipientsManager : IRecipientManager
     {
         private RecipientStoreInMemory _Store;
         public RecipientsManager(RecipientStoreInMemory Store) { _Store = Store; }
@@ -18,6 +18,14 @@ namespace MailSender.lib.Services
         public void Add(Recipient NewRecipient)
         { 
             
+        }
+        public void Edit(Recipient Recipient)
+        {
+            _Store.Edit(Recipient.Id, Recipient);
+        }
+        public void SaveChanges()
+        {
+            _Store.SaveChanges();
         }
 
     }

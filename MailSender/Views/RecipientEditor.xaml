@@ -28,7 +28,9 @@
                      VerticalAlignment="Top" HorizontalAlignment="Center"
                      Margin="0,10"
                      Grid.Row="3">
-            <Button Margin="10,0" Padding="10,5">Сохранить</Button>
+            <Button Margin="10,0" Padding="10,5" Content="Сохранить"
+                    Command="{Binding SaveRecipientChangesCommand}" 
+                    CommandParameter="{Binding SelectedRecipient}"/>
             <Button Margin="10,0">Создать</Button>
         </UniformGrid>
     </Grid>

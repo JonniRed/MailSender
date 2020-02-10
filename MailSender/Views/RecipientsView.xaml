@@ -13,9 +13,10 @@
             <TextBlock></TextBlock>
             <TextBox/>
 
-
         </DockPanel>
-        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" Padding="40,5" Margin="0,5,5,10">Обновить</Button>
+        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" 
+                Padding="40,5" Margin="0,5,5,10"
+                Command="{Binding LoadRecipientsDataCommand}">Загрузить</Button>
         <DataGrid ItemsSource="{Binding Recipients}" 
                   SelectedItem="{Binding SelectedRecipient}"    
                   AutoGenerateColumns="False"
