@@ -6,10 +6,14 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:view="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Главное окно" Height="600" Width="800">
+        Title="{Binding Title}" 
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+        Height="600" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -180,17 +184,14 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
-                        <DataGrid ItemsSource="{x:Static data:TestData.Recipient}" 
-                                  Name="RecipientsList"
-                                  AutoGenerateColumns="False"
-                                  IsReadOnly="True" VerticalGridLinesBrush="Gray" GridLinesVisibility="Vertical"
-                                  AlternatingRowBackground="LightGray">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="id" />
-                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" />
-                                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" />
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <view:RecipientsView Grid.Column="0"/>
+                            <view:RecipientEditor Grid.Column="1"/>
+                        </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
@@ -203,6 +204,7 @@
                             <StackPanel>
                                 <Button>
                                     <DockPanel Margin="20,0">
+                                       <!-- <xctk:TimePicker> </xctk:TimePicker>!-->
                                         <fa:ImageAwesome DockPanel.Dock="Right" Height="12" Icon="ClockOutline" />
                                         <TextBlock HorizontalAlignment="Center">Запланировать</TextBlock>
                                     </DockPanel>
