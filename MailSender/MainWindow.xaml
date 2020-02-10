@@ -9,6 +9,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:view="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="{Binding Title}" 
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
