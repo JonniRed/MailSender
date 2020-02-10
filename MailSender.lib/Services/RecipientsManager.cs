@@ -9,11 +9,11 @@ namespace MailSender.lib.Services
     public class RecipientsManager : IRecipientManager
     {
         private IRecipientStore _Store;
-        public RecipientsManager(RecipientStoreInMemory Store) { _Store = Store; }
+        public RecipientsManager(IRecipientStore Store) { _Store = Store; }
     
         public IEnumerable<Recipient>GetAll()
         {
-            return _Store.Get();
+            return _Store.GetAll();
         }
         public void Add(Recipient NewRecipient)
         { 

@@ -9,7 +9,7 @@ namespace MailSender.lib.Services
 {
     public class RecipientStoreInMemory : IRecipientStore
     {
-        public IEnumerable<Recipient> Get() => TestData.Recipient;
+        public IEnumerable<Recipient> GetAll() => TestData.Recipient;
         public void Edit(int Id, Recipient recipient) { }
         public void SaveChanges() { }
     }
