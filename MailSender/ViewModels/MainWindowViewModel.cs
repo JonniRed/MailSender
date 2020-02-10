@@ -4,6 +4,7 @@ using System.Text;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight;
 using MailSender.lib.Services;
+using MailSender.lib.Services.Interfaces;
 using MailSender.lib.Entities;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
@@ -12,7 +13,7 @@ namespace MailSender.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private readonly RecipientsManager _RecipientManager;
+        private readonly IRecipientManager _RecipientManager;
         private string _Title = "Рассыльщик почты";
         public string Title
         {
@@ -36,7 +37,7 @@ namespace MailSender.ViewModels
         public ICommand LoadRecipientsDataCommand { get; }
         public ICommand SaveRecipientChangesCommand { get; }
 
-        public MainWindowViewModel(RecipientsManager RecipientManager)
+        public MainWindowViewModel(IRecipientManager RecipientManager)
         {
             _RecipientManager = RecipientManager;
 

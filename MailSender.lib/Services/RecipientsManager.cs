@@ -8,7 +8,7 @@ namespace MailSender.lib.Services
 {
     public class RecipientsManager : IRecipientManager
     {
-        private RecipientStoreInMemory _Store;
+        private IRecipientStore _Store;
         public RecipientsManager(RecipientStoreInMemory Store) { _Store = Store; }
     
         public IEnumerable<Recipient>GetAll()
