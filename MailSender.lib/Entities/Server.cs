@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Entities
 {
-    public class Server
+    public class Server : NamedEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string Adress { get; set; }
         public int Port { get; set; }
         public bool UseSsl { get; set; } = true;
