@@ -9,9 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5A1B1D8D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWPF", "Tests\TestWPF\TestWPF.csproj", "{E1D1C796-DADA-421A-B2EB-17650807EBC6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsole", "Tests\TestConsole\TestConsole.csproj", "{D98995A4-F5E3-4054-96F1-C5B829BFD7A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{1E369CA4-DC15-4333-B003-A8663DFC1D69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{1E369CA4-DC15-4333-B003-A8663DFC1D69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +25,6 @@ Global
 		{E1D1C796-DADA-421A-B2EB-17650807EBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1D1C796-DADA-421A-B2EB-17650807EBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1D1C796-DADA-421A-B2EB-17650807EBC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D98995A4-F5E3-4054-96F1-C5B829BFD7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D98995A4-F5E3-4054-96F1-C5B829BFD7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D98995A4-F5E3-4054-96F1-C5B829BFD7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D98995A4-F5E3-4054-96F1-C5B829BFD7A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E369CA4-DC15-4333-B003-A8663DFC1D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E369CA4-DC15-4333-B003-A8663DFC1D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E369CA4-DC15-4333-B003-A8663DFC1D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,7 +35,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E1D1C796-DADA-421A-B2EB-17650807EBC6} = {5A1B1D8D-0EC1-4BE5-BADE-05583D0D2E4E}
-		{D98995A4-F5E3-4054-96F1-C5B829BFD7A3} = {5A1B1D8D-0EC1-4BE5-BADE-05583D0D2E4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF30B743-D8D4-444F-A8D4-AC42468D46BD}
