@@ -15,7 +15,6 @@ namespace MailSender.lib.Services.InMemory
         public RecipientStoreInMemory() : base(TestData.Recipient) { }
         public override void Edit(int Id, Recipient recipient)
         {
-
             var db_recipient = GetById(Id);
             if (db_recipient is null) return;
 
