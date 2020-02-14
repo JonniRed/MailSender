@@ -20,7 +20,7 @@ namespace MailSender.lib.Entities
         /// </summary>
         public MailingList Recipient { get; set; }
         /// <summary>
-        /// сервес, чеерз который надо выполнить отправку почты
+        /// сервер, через который надо выполнить отправку почты
         /// </summary>
         public Server Server { get; set; }
         /// <summary>
