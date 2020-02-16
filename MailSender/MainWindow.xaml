@@ -204,7 +204,7 @@
                             <StackPanel>
                                 <Button>
                                     <DockPanel Margin="20,0">
-                                       <!-- <xctk:TimePicker> </xctk:TimePicker>!-->
+                                     
                                         <fa:ImageAwesome DockPanel.Dock="Right" Height="12" Icon="ClockOutline" />
                                         <TextBlock HorizontalAlignment="Center">Запланировать</TextBlock>
                                     </DockPanel>
