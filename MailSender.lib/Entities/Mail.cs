@@ -5,8 +5,9 @@ using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Entities
 {
-    public class Sender : PersonEntity
+    public class Mail : BaseEntity
     {
-       public override string ToString() => $"{Name}:{Adress}";
+        public string Subject { get; set; }
+        public string Body { get; set; }
     }
 }

@@ -9,7 +9,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:view="clr-namespace:MailSender.Views"
         xmlns:local="clr-namespace:MailSender"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        
         mc:Ignorable="d"
         Title="{Binding Title}" 
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
@@ -124,7 +124,7 @@
                         <ToolBar Header="Отправители">
                             <ComboBox Width="150" Name="SenderList"
                                       ItemsSource="{x:Static data:TestData.Senders}" 
-                                      DisplayMemberPath="Name" SelectedIndex="0"/>
+                                      DisplayMemberPath="Name" SelectedIndex="0" SelectionChanged="SenderList_SelectionChanged"/>
                             <Button Width="25" ToolTip="Добавить" Click="OnSenderEditClick">
                                 <Image Height="17" Source="Media\Mail-Add-icon.png"/>
                             </Button>
