@@ -67,5 +67,10 @@ namespace MailSender
             sender.Name = dialog.NameValue;
             sender.Adress = dialog.AdressValue;
         }
+
+        private void SenderList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

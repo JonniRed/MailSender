@@ -5,6 +5,7 @@ using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 using MailSender.lib.Services;
 using MailSender.lib.Services.Interfaces;
+using MailSender.lib.Services.InMemory;
 
 
 namespace MailSender.ViewModels
