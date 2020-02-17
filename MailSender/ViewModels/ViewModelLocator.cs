@@ -18,6 +18,9 @@ namespace MailSender.ViewModels
             var services = SimpleIoc.Default;
             services.Register<MainWindowViewModel>();
             services.Register<IRecipientManager, RecipientsManager>();
+            services.Register<IServerStore, ServerStoreInMemory>();
+            services.Register<ISenderStore, SenderStoreInMemory>();
+            services.Register<IMailStore, MailStoreInMemory>();
             services.Register<IRecipientStore, RecipientStoreInMemory>();
         }
         public MainWindowViewModel MainWindowModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();

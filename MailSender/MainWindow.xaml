@@ -123,21 +123,22 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
                             <ComboBox Width="150" Name="SenderList"
-                                      ItemsSource="{x:Static data:TestData.Senders}" 
+                                      ItemsSource="{Binding Sender}" 
+                                      SelectedItem="{Binding SelectedSender}"
                                       DisplayMemberPath="Name" SelectedIndex="0" SelectionChanged="SenderList_SelectionChanged"/>
                             <Button Width="25" ToolTip="Добавить" Click="OnSenderEditClick">
-                                <Image Height="17" Source="Media\Mail-Add-icon.png"/>
+                                <Image Height="17" Source="C:\Users\admin\Source\Repos\JonniRed\MailSender\MailSender\Media\Mail-Add-icon.png"/>
                             </Button>
                             <Button Width="25" ToolTip="Редактировать">
-                                <Image Height="17" Source="Media\61776.png"/>
+                                <Image Height="17" Source="C:\Users\admin\Source\Repos\JonniRed\MailSender\MailSender\Media\61776.png"/>
                             </Button>
                             <Button Width="25" ToolTip="Удалить">
-                                <Image Height="19" Source="\Media\trash.png"/>
+                                <Image Height="19" Source="C:\Users\admin\Source\Repos\JonniRed\MailSender\MailSender\Media\trash.png"/>
                             </Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1">
                             <ComboBox Width="150" Name="ServersList"
-                                      ItemsSource="{x:Static data:TestData.Servers}" SelectedIndex="0">
+                                      ItemsSource="{Binding Server}" SelectedItem="{Binding SelectedServer}" SelectedIndex="0">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate DataType="entities:Server">
                                         <StackPanel Orientation="Horizontal">
@@ -266,26 +267,44 @@
                                 <Button Content="Add"/>
                                 <Button Content="Del"/>
                             </UniformGrid>
-                            <ListBox>
-                                <ListBoxItem>Письмо 1</ListBoxItem>
-                                <ListBoxItem>Письмо 2</ListBoxItem>
-                                <ListBoxItem>Письмо 3</ListBoxItem>
-                                <ListBoxItem>Письмо 4</ListBoxItem>
+                            <ListBox ItemsSource="{Binding Mail}" SelectedItem="{Binding SelectedMail}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="entities:Mail">
+                                        <TextBlock Text="Subject"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
                             </ListBox>
                         </DockPanel>
                     </GroupBox>
-                    <GroupBox Header="Выбранное письмо" Grid.Column="1">
+                    <GroupBox Header="Выбранное письмо" Grid.Column="1" DataContext="{Binding SelectedMail}">
                         <DockPanel>
                             <GroupBox DockPanel.Dock="Top" Header="Тема">
-                                <TextBox Text="Текст заголовка письма" Name="MailHeader" />
+                                <TextBox Text="{Binding Subject, TargetNullValue='[Тема письма]'}" Name="MailHeader"  />
                             </GroupBox>
                             <GroupBox DockPanel.Dock="Top" Header="Текст письма">
                                 <StackPanel>
-                                    <TextBox Name="MailBody" AcceptsReturn="True" Height="250"></TextBox>
+                                    <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody" Text="{Binding Body}">
+                                        <TextBox.Style>
+                                            <Style TargetType="TextBox">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="TextBox">
+                                                                    <TextBox>Тело письма</TextBox>   
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBox.Style>
+                                    </TextBox>
                                     <Button Click="Click_button_send">Отправить</Button>
                                 </StackPanel>
                             </GroupBox>
-                           
+                            <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                                          Width="4" Background="Transparent"/>
                         </DockPanel>
                     </GroupBox>
                 </Grid>
