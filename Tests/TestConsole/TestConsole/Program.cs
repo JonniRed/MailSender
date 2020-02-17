@@ -8,6 +8,7 @@ namespace TestConsole
         static void Main(string[] args)
         {
             //ThreadPoolTests.Start();
+            SynchronizationTests.Start();
             Console.WriteLine("Приложение должно быть закрыто");
         }
     }   
