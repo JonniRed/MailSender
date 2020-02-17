@@ -28,6 +28,9 @@
         <UniformGrid Rows="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" VerticalAlignment="Center">
             <Button Click="OnOKButtonClick">OK</Button>
             <Button Click="OnCancelButtonClick">Cancel</Button>
+            <Button Click="OnCancelButtonClick">
+                <TextBlock Text="X" Foreground="Red" FontSize="20" FontWeight="Bold"/>
+            </Button>
         </UniformGrid>
     </Grid>
 </Window>

@@ -7,6 +7,8 @@ using MailSender.lib.Services;
 using MailSender.lib.Services.Interfaces;
 using MailSender.lib.Services.InMemory;
 
+using MailSender.Infrastructure.Services.Interfaces;
+using MailSender.Infrastructure.Services;
 
 namespace MailSender.ViewModels
 {
@@ -22,6 +24,8 @@ namespace MailSender.ViewModels
             services.Register<ISenderStore, SenderStoreInMemory>();
             services.Register<IMailStore, MailStoreInMemory>();
             services.Register<IRecipientStore, RecipientStoreInMemory>();
+
+            services.Register<ISenderEditor, WindowSenderEditor>();
         }
         public MainWindowViewModel MainWindowModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
     }

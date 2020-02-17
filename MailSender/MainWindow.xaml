@@ -129,7 +129,8 @@
                             <Button Width="25" ToolTip="Добавить" Click="OnSenderEditClick">
                                 <Image Height="17" Source="C:\Users\admin\Source\Repos\JonniRed\MailSender\MailSender\Media\Mail-Add-icon.png"/>
                             </Button>
-                            <Button Width="25" ToolTip="Редактировать">
+                            <Button Width="25" ToolTip="Редактировать" Command="{Binding SenderEditCommand}" 
+                                    CommandParameter="{Binding SelectedSender}">
                                 <Image Height="17" Source="C:\Users\admin\Source\Repos\JonniRed\MailSender\MailSender\Media\61776.png"/>
                             </Button>
                             <Button Width="25" ToolTip="Удалить">
@@ -283,23 +284,10 @@
                             </GroupBox>
                             <GroupBox DockPanel.Dock="Top" Header="Текст письма">
                                 <StackPanel>
-                                    <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody" Text="{Binding Body}">
-                                        <TextBox.Style>
-                                            <Style TargetType="TextBox">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="">
-                                                        <Setter Property="Template">
-                                                            <Setter.Value>
-                                                                <ControlTemplate TargetType="TextBox">
-                                                                    <TextBox>Тело письма</TextBox>   
-                                                                </ControlTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBox.Style>
-                                    </TextBox>
+                                    <Grid>
+                                        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody" Text="{Binding Body}"/>
+                                        <Line StrokeThickness="3" Stroke="Blue"></Line>
+                                    </Grid>
                                     <Button Click="Click_button_send">Отправить</Button>
                                 </StackPanel>
                             </GroupBox>

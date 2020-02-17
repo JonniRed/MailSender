@@ -16,6 +16,7 @@ using MailSender.lib.Data;
 using MailSender.lib.Entities;
 using MailSender.lib.Services;
 using MailSender.lib.Service;
+using MailSender.Views;
 
 
 namespace MailSender
@@ -31,6 +32,8 @@ namespace MailSender
             //SenderList.ItemsSource = TestData.Senders;
 
         }
+
+        public static object Application { get; internal set; }
 
         private void Button_click_pl(object sender, RoutedEventArgs e)
         {
@@ -60,8 +63,8 @@ namespace MailSender
         {
             var sender = SenderList.SelectedItem as Sender;
             if (sender is null) return;
-
-            var dialog = new SenderEditor(sender);
+            var newWindow = new MainWindow();
+            var dialog = new SenderEditor(sender, newWindow);
 
             if (dialog.ShowDialog() != true) return;
             sender.Name = dialog.NameValue;

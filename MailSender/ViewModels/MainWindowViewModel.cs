@@ -8,6 +8,8 @@ using MailSender.lib.Services.Interfaces;
 using MailSender.lib.Entities;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using MailSender.Views;
+using MailSender.Infrastructure.Services.Interfaces;
 
 namespace MailSender.ViewModels 
 {
@@ -17,6 +19,7 @@ namespace MailSender.ViewModels
         private readonly IServerStore _ServerStore;
         private readonly ISenderStore _SenderStore;
         private readonly IMailStore _MailStore;
+        private readonly ISenderEditor _SenderEditor;
 
       private string _Title = "Рассыльщик почты";
         public string Title
@@ -84,19 +87,26 @@ namespace MailSender.ViewModels
         #region Команды
         public ICommand LoadRecipientsDataCommand { get; }
         public ICommand SaveRecipientChangesCommand { get; }
+        public ICommand SenderEditCommand { get; }
+
+        #endregion
+
 
         public MainWindowViewModel(IRecipientManager RecipientManager, ISenderStore SenderStore,
-            IServerStore ServerStore, IMailStore MailStore)
+            IServerStore ServerStore, IMailStore MailStore, ISenderEditor SenderEditor)
         {
             _RecipientManager = RecipientManager;
             _MailStore = MailStore;
             _ServerStore = ServerStore;
             _SenderStore = SenderStore;
+            _SenderEditor = SenderEditor;
 
             LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientsDataCommandExecuted, CanLoadRecipientsDataCommandExecute);
             SaveRecipientChangesCommand = new RelayCommand<Recipient>(OnSaveRecipientChangesCommandExecuted, CanSaveRecipientChangesCommandExecute);
-
+            SenderEditCommand = new RelayCommand<Sender>(OnSenderEditCommandExecuted, CanSenderEditCommandExecute);
         }
+        private bool CanSenderEditCommandExecute(Sender sender) => sender != null;
+        private void OnSenderEditCommandExecuted(Sender sender) => _SenderEditor.Edit(sender);
         private bool CanLoadRecipientsDataCommandExecute() => true;
         private void OnLoadRecipientsDataCommandExecuted()
         {
@@ -116,6 +126,6 @@ namespace MailSender.ViewModels
             _RecipientManager.Edit(recipient);
             _RecipientManager.SaveChanges();
         }
-        #endregion
+       
     }
 }
