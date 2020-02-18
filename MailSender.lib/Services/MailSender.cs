@@ -1,6 +1,9 @@
 ﻿using System.Net.Mail;
 using System.Net;
 using MailSender.lib.Entities;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace MailSender.lib.Services
 {
@@ -25,7 +28,15 @@ namespace MailSender.lib.Services
 
             }
         }
+        public void Send(Mail Message, Sender From, IEnumerable<Recipient> To)
+        {
+            foreach (var recipient in To) 
+                Send(Message, From, To);
+        }
+        public void SendParallel(Mail Message, Sender From, IEnumerable<Recipient> To)
+        {
+            foreach (var recipient in To)
+                ThreadPool.QueueUserWorkItem(_ => Send(Message, From, To));
+        }
     }
-
-    
 }
