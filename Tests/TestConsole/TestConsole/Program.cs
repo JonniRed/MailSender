@@ -9,7 +9,7 @@ namespace TestConsole
         {
             //ThreadPoolTests.Start();
             SynchronizationTests.Start();
-            Console.WriteLine("Приложение должно быть закрыто");
+           // Console.WriteLine("Приложение должно быть закрыто");
         }
     }   
 }
