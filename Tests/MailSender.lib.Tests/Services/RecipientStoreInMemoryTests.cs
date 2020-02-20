@@ -21,5 +21,6 @@ namespace MailSender.lib.Tests.Services
             var store = new RecipientStoreInMemory();
             Assert.ThrowsException<ArgumentNullException>(() => store.Create(null));
         }
+      
     }
 }
