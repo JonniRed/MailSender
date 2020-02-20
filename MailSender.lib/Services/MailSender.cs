@@ -1,65 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 using System.Net;
-using System.Diagnostics;
+using MailSender.lib.Entities;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace MailSender.lib.Services
 {
     public class MailSender
     {
-        private readonly string _ServerAdress;
-        private readonly int _Port;
-        private bool _UseSsl;
-        private string _Login;
-        private string _Password;
+        private readonly Server _Server;
 
-        public MailSender(string ServerAdress, int Port, bool UseSSl, string Login, string Password)
-        {
-            _ServerAdress = ServerAdress;
-            _Port = Port;
-            _UseSsl = UseSSl;
-            _Login = Login;
-            _Password = Password;
-        }
+        public MailSender(Server Server) => _Server = Server;
 
-        public void Send(string Subject, string Body, string From, string To)
+        public void Send(Mail Mail, Sender From, Recipient To)
         {
-            using (var message = new MailMessage(From, To))
+            using (var message = new MailMessage(new MailAddress(From.Adress, From.Name),
+                new MailAddress(To.Adress, To.Name)))
             {
-                message.Subject = Subject;
-                message.Body = Body;
+                message.Subject = Mail.Subject;
+                message.Body = Mail.Body;
 
-                var login = new NetworkCredential(_Login, _Password);
-                using (var client = new SmtpClient(_ServerAdress, _Port) { EnableSsl = _UseSsl, Credentials = login })
+                var login = new NetworkCredential(_Server.Login, _Server.Password);
+                using (var client = new SmtpClient(_Server.Adress, _Server.Port)
+                { EnableSsl = _Server.UseSsl, Credentials = login })
                     client.Send(message);
 
             }
         }
-    }
-
-    public class DebugMailSender
-    {
-        private readonly string _ServerAdress;
-        private readonly int _Port;
-        private bool _UseSsl;
-        private string _Login;
-        private string _Password;
-
-        public DebugMailSender(string ServerAdress, int Port, bool UseSSl, string Login, string Password)
+        public void Send(Mail Message, Sender From, IEnumerable<Recipient> To)
         {
-            _ServerAdress = ServerAdress;
-            _Port = Port;
-            _UseSsl = UseSSl;
-            _Login = Login;
-            _Password = Password;
+            foreach (var recipient in To) 
+                Send(Message, From, To);
+        }
+        public void SendParallel(Mail Message, Sender From, IEnumerable<Recipient> To)
+        {
+            foreach (var recipient in To)
+                ThreadPool.QueueUserWorkItem(_ => Send(Message, From, To));
         }
 
-        public void Send(string Subject, string Body, string From, string To)
+        public async Task SendAsync(Mail Mail, Sender From, Recipient To)
         {
-            Debug.WriteLine("Отправка почты от {0} к {1} через {2}:{3}[4]", From, To,
-                _ServerAdress, _Port, _UseSsl ? "SSL" : "no SSL", Subject, Body);
+            using (var message = new MailMessage(new MailAddress(From.Adress, From.Name),
+               new MailAddress(To.Adress, To.Name)))
+            {
+                message.Subject = Mail.Subject;
+                message.Body = Mail.Body;
+
+                var login = new NetworkCredential(_Server.Login, _Server.Password);
+                using (var client = new SmtpClient(_Server.Adress, _Server.Port)
+                { EnableSsl = _Server.UseSsl, Credentials = login })
+                    await client.SendMailAsync(message).ConfigureAwait(false);
+            }
+
         }
-    }
-}
+       /* public async Task SendAsync(Mail Message, Sender From, IEnumerable<Recipient> To)
+        {
+            await Task.WhenAll(To.Select(Recipient => SendAsync(Message, From, To))).ConfigureAwait(false);
+        }
+        (Асинхронная параллельная обработка данных)*/
+        public async Task SendAsync(Mail Message, Sender From, IEnumerable<Recipient> To,
+            CancellationToken Cancel = default)
+        {
+            Cancel.ThrowIfCancellationRequested();
+            foreach (var recipient in To) await SendAsync(Message, From, To).ConfigureAwait(false);
+        }
+        ///Асинхронная последовательная обработка данных
+     }
+ }
