@@ -15,7 +15,6 @@ namespace MailSender.lib.Data.EF
         public DbSet<MailingList> MailingList { get; set; }
         public DbSet<SchedulerTask> SchedulerTasks { get; set; }
 
-
         public MailSenderDB(DbContextOptions<MailSenderDB> opt) : base(opt) { }
     }
 }
