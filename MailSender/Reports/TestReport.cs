@@ -5,21 +5,14 @@ using DocumentFormat.OpenXml;
 using M = DocumentFormat.OpenXml.Math;
 using Ovml = DocumentFormat.OpenXml.Vml.Office;
 using V = DocumentFormat.OpenXml.Vml;
-using W14 = DocumentFormat.OpenXml.Office2010.Word;
 using W15 = DocumentFormat.OpenXml.Office2013.Word;
 using A = DocumentFormat.OpenXml.Drawing;
 using Thm15 = DocumentFormat.OpenXml.Office2013.Theme;
 
-namespace MailSender.Reports
+namespace GeneratedCode
 {
-    public class TestReport
+    public class GeneratedClass
     {
-        public string Value1 { get; set; } = "Test value";
-
-        public int TestIntValue { get; set; } = 42;
-
-        public bool TestBoolValue { get; set; }
-
         // Creates a WordprocessingDocument.
         public void CreatePackage(string filePath)
         {
@@ -68,9 +61,9 @@ namespace MailSender.Reports
             Ap.Pages pages1 = new Ap.Pages();
             pages1.Text = "1";
             Ap.Words words1 = new Ap.Words();
-            words1.Text = "4";
+            words1.Text = "12";
             Ap.Characters characters1 = new Ap.Characters();
-            characters1.Text = "25";
+            characters1.Text = "73";
             Ap.Application application1 = new Ap.Application();
             application1.Text = "Microsoft Office Word";
             Ap.DocumentSecurity documentSecurity1 = new Ap.DocumentSecurity();
@@ -86,13 +79,13 @@ namespace MailSender.Reports
             Ap.LinksUpToDate linksUpToDate1 = new Ap.LinksUpToDate();
             linksUpToDate1.Text = "false";
             Ap.CharactersWithSpaces charactersWithSpaces1 = new Ap.CharactersWithSpaces();
-            charactersWithSpaces1.Text = "28";
+            charactersWithSpaces1.Text = "84";
             Ap.SharedDocument sharedDocument1 = new Ap.SharedDocument();
             sharedDocument1.Text = "false";
             Ap.HyperlinksChanged hyperlinksChanged1 = new Ap.HyperlinksChanged();
             hyperlinksChanged1.Text = "false";
             Ap.ApplicationVersion applicationVersion1 = new Ap.ApplicationVersion();
-            applicationVersion1.Text = "16.0000";
+            applicationVersion1.Text = "15.0000";
 
             properties1.Append(template1);
             properties1.Append(totalTime1);
@@ -117,20 +110,9 @@ namespace MailSender.Reports
         // Generates content of mainDocumentPart1.
         private void GenerateMainDocumentPart1Content(MainDocumentPart mainDocumentPart1)
         {
-            Document document1 = new Document() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid wp14" } };
+            Document document1 = new Document() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 wp14" } };
             document1.AddNamespaceDeclaration("wpc", "http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas");
-            document1.AddNamespaceDeclaration("cx", "http://schemas.microsoft.com/office/drawing/2014/chartex");
-            document1.AddNamespaceDeclaration("cx1", "http://schemas.microsoft.com/office/drawing/2015/9/8/chartex");
-            document1.AddNamespaceDeclaration("cx2", "http://schemas.microsoft.com/office/drawing/2015/10/21/chartex");
-            document1.AddNamespaceDeclaration("cx3", "http://schemas.microsoft.com/office/drawing/2016/5/9/chartex");
-            document1.AddNamespaceDeclaration("cx4", "http://schemas.microsoft.com/office/drawing/2016/5/10/chartex");
-            document1.AddNamespaceDeclaration("cx5", "http://schemas.microsoft.com/office/drawing/2016/5/11/chartex");
-            document1.AddNamespaceDeclaration("cx6", "http://schemas.microsoft.com/office/drawing/2016/5/12/chartex");
-            document1.AddNamespaceDeclaration("cx7", "http://schemas.microsoft.com/office/drawing/2016/5/13/chartex");
-            document1.AddNamespaceDeclaration("cx8", "http://schemas.microsoft.com/office/drawing/2016/5/14/chartex");
             document1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
-            document1.AddNamespaceDeclaration("aink", "http://schemas.microsoft.com/office/drawing/2016/ink");
-            document1.AddNamespaceDeclaration("am3d", "http://schemas.microsoft.com/office/drawing/2017/model3d");
             document1.AddNamespaceDeclaration("o", "urn:schemas-microsoft-com:office:office");
             document1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
             document1.AddNamespaceDeclaration("m", "http://schemas.openxmlformats.org/officeDocument/2006/math");
@@ -141,8 +123,6 @@ namespace MailSender.Reports
             document1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
             document1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             document1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
-            document1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
-            document1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
             document1.AddNamespaceDeclaration("wpg", "http://schemas.microsoft.com/office/word/2010/wordprocessingGroup");
             document1.AddNamespaceDeclaration("wpi", "http://schemas.microsoft.com/office/word/2010/wordprocessingInk");
             document1.AddNamespaceDeclaration("wne", "http://schemas.microsoft.com/office/word/2006/wordml");
@@ -150,41 +130,25 @@ namespace MailSender.Reports
 
             Body body1 = new Body();
 
-            Paragraph paragraph1 = new Paragraph() { RsidParagraphMarkRevision = "00BD2D53", RsidParagraphAddition = "00057E8C", RsidRunAdditionDefault = "00381F0B", ParagraphId = "7A54ED82", TextId = "0A9335B4" };
+            Paragraph paragraph1 = new Paragraph() { RsidParagraphAddition = "00E6680F", RsidRunAdditionDefault = "006D65EC" };
 
             ParagraphProperties paragraphProperties1 = new ParagraphProperties();
 
             ParagraphMarkRunProperties paragraphMarkRunProperties1 = new ParagraphMarkRunProperties();
-            Bold bold1 = new Bold();
-            BoldComplexScript boldComplexScript1 = new BoldComplexScript();
-            FontSize fontSize1 = new FontSize() { Val = "48" };
-            FontSizeComplexScript fontSizeComplexScript1 = new FontSizeComplexScript() { Val = "40" };
             Languages languages1 = new Languages() { Val = "en-US" };
 
-            paragraphMarkRunProperties1.Append(bold1);
-            paragraphMarkRunProperties1.Append(boldComplexScript1);
-            paragraphMarkRunProperties1.Append(fontSize1);
-            paragraphMarkRunProperties1.Append(fontSizeComplexScript1);
             paragraphMarkRunProperties1.Append(languages1);
 
             paragraphProperties1.Append(paragraphMarkRunProperties1);
 
-            Run run1 = new Run() { RsidRunProperties = "00BD2D53" };
+            Run run1 = new Run();
 
             RunProperties runProperties1 = new RunProperties();
-            Bold bold2 = new Bold();
-            BoldComplexScript boldComplexScript2 = new BoldComplexScript();
-            FontSize fontSize2 = new FontSize() { Val = "48" };
-            FontSizeComplexScript fontSizeComplexScript2 = new FontSizeComplexScript() { Val = "40" };
             Languages languages2 = new Languages() { Val = "en-US" };
 
-            runProperties1.Append(bold2);
-            runProperties1.Append(boldComplexScript2);
-            runProperties1.Append(fontSize2);
-            runProperties1.Append(fontSizeComplexScript2);
             runProperties1.Append(languages2);
             Text text1 = new Text();
-            text1.Text = Value1;
+            text1.Text = "Hello world!";
 
             run1.Append(runProperties1);
             run1.Append(text1);
@@ -192,77 +156,232 @@ namespace MailSender.Reports
             paragraph1.Append(paragraphProperties1);
             paragraph1.Append(run1);
 
-            Paragraph paragraph2 = new Paragraph() { RsidParagraphMarkRevision = "00BD2D53", RsidParagraphAddition = "00381F0B", RsidRunAdditionDefault = "00381F0B", ParagraphId = "4C7FFB21", TextId = "1D6EBB41" };
+            Paragraph paragraph2 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
 
             ParagraphProperties paragraphProperties2 = new ParagraphProperties();
 
             ParagraphMarkRunProperties paragraphMarkRunProperties2 = new ParagraphMarkRunProperties();
-            RunFonts runFonts1 = new RunFonts() { Ascii = "Arial Black", HighAnsi = "Arial Black" };
             Languages languages3 = new Languages() { Val = "en-US" };
 
-            paragraphMarkRunProperties2.Append(runFonts1);
             paragraphMarkRunProperties2.Append(languages3);
 
             paragraphProperties2.Append(paragraphMarkRunProperties2);
 
-            Run run2 = new Run() { RsidRunProperties = "00BD2D53" };
-
-            RunProperties runProperties2 = new RunProperties();
-            RunFonts runFonts2 = new RunFonts() { Ascii = "Arial Black", HighAnsi = "Arial Black" };
-            Languages languages4 = new Languages() { Val = "en-US" };
-
-            runProperties2.Append(runFonts2);
-            runProperties2.Append(languages4);
-            Text text2 = new Text();
-            text2.Text = "Id:" + TestIntValue.ToString("00000");
-
-            run2.Append(runProperties2);
-            run2.Append(text2);
-
             paragraph2.Append(paragraphProperties2);
-            paragraph2.Append(run2);
 
-            Paragraph paragraph3 = new Paragraph() { RsidParagraphMarkRevision = "00BD2D53", RsidParagraphAddition = "00381F0B", RsidRunAdditionDefault = "00381F0B", ParagraphId = "3C1275F8", TextId = "39469EE3" };
+            Paragraph paragraph3 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidParagraphProperties = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
 
             ParagraphProperties paragraphProperties3 = new ParagraphProperties();
 
             ParagraphMarkRunProperties paragraphMarkRunProperties3 = new ParagraphMarkRunProperties();
-            Color color1 = new Color() { Val = "FF0000" };
-            Languages languages5 = new Languages() { Val = "en-US" };
+            Languages languages4 = new Languages() { Val = "en-US" };
 
-            paragraphMarkRunProperties3.Append(color1);
-            paragraphMarkRunProperties3.Append(languages5);
+            paragraphMarkRunProperties3.Append(languages4);
 
             paragraphProperties3.Append(paragraphMarkRunProperties3);
-            ProofError proofError1 = new ProofError() { Type = ProofingErrorValues.SpellStart };
 
-            Run run3 = new Run() { RsidRunProperties = "00BD2D53" };
+            Run run2 = new Run();
 
-            RunProperties runProperties3 = new RunProperties();
-            Color color2 = new Color() { Val = "FF0000" };
-            Highlight highlight1 = new Highlight() { Val = HighlightColorValues.DarkRed };
+            RunProperties runProperties2 = new RunProperties();
+            Languages languages5 = new Languages() { Val = "en-US" };
+
+            runProperties2.Append(languages5);
+            Text text2 = new Text();
+            text2.Text = "Hello world!";
+
+            run2.Append(runProperties2);
+            run2.Append(text2);
+
+            paragraph3.Append(paragraphProperties3);
+            paragraph3.Append(run2);
+
+            Paragraph paragraph4 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties4 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties4 = new ParagraphMarkRunProperties();
             Languages languages6 = new Languages() { Val = "en-US" };
 
-            runProperties3.Append(color2);
-            runProperties3.Append(highlight1);
-            runProperties3.Append(languages6);
+            paragraphMarkRunProperties4.Append(languages6);
+
+            paragraphProperties4.Append(paragraphMarkRunProperties4);
+
+            paragraph4.Append(paragraphProperties4);
+
+            Paragraph paragraph5 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidParagraphProperties = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties5 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties5 = new ParagraphMarkRunProperties();
+            Languages languages7 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties5.Append(languages7);
+
+            paragraphProperties5.Append(paragraphMarkRunProperties5);
+
+            Run run3 = new Run();
+
+            RunProperties runProperties3 = new RunProperties();
+            Languages languages8 = new Languages() { Val = "en-US" };
+
+            runProperties3.Append(languages8);
             Text text3 = new Text();
-            text3.Text = TestBoolValue ? "RED" : "BLUE";
+            text3.Text = "Hello world!";
 
             run3.Append(runProperties3);
             run3.Append(text3);
+
+            paragraph5.Append(paragraphProperties5);
+            paragraph5.Append(run3);
+
+            Paragraph paragraph6 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties6 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties6 = new ParagraphMarkRunProperties();
+            Languages languages9 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties6.Append(languages9);
+
+            paragraphProperties6.Append(paragraphMarkRunProperties6);
+
+            paragraph6.Append(paragraphProperties6);
+
+            Paragraph paragraph7 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidParagraphProperties = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties7 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties7 = new ParagraphMarkRunProperties();
+            Languages languages10 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties7.Append(languages10);
+
+            paragraphProperties7.Append(paragraphMarkRunProperties7);
+
+            Run run4 = new Run();
+
+            RunProperties runProperties4 = new RunProperties();
+            Languages languages11 = new Languages() { Val = "en-US" };
+
+            runProperties4.Append(languages11);
+            Text text4 = new Text();
+            text4.Text = "Hello world!";
+
+            run4.Append(runProperties4);
+            run4.Append(text4);
+
+            paragraph7.Append(paragraphProperties7);
+            paragraph7.Append(run4);
+
+            Paragraph paragraph8 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties8 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties8 = new ParagraphMarkRunProperties();
+            Languages languages12 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties8.Append(languages12);
+
+            paragraphProperties8.Append(paragraphMarkRunProperties8);
+
+            paragraph8.Append(paragraphProperties8);
+
+            Paragraph paragraph9 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidParagraphProperties = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties9 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties9 = new ParagraphMarkRunProperties();
+            Languages languages13 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties9.Append(languages13);
+
+            paragraphProperties9.Append(paragraphMarkRunProperties9);
+
+            Run run5 = new Run();
+
+            RunProperties runProperties5 = new RunProperties();
+            Languages languages14 = new Languages() { Val = "en-US" };
+
+            runProperties5.Append(languages14);
+            Text text5 = new Text();
+            text5.Text = "Hello world!";
+
+            run5.Append(runProperties5);
+            run5.Append(text5);
+
+            paragraph9.Append(paragraphProperties9);
+            paragraph9.Append(run5);
+
+            Paragraph paragraph10 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties10 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties10 = new ParagraphMarkRunProperties();
+            Languages languages15 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties10.Append(languages15);
+
+            paragraphProperties10.Append(paragraphMarkRunProperties10);
+
+            paragraph10.Append(paragraphProperties10);
+
+            Paragraph paragraph11 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidParagraphProperties = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties11 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties11 = new ParagraphMarkRunProperties();
+            Languages languages16 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties11.Append(languages16);
+
+            paragraphProperties11.Append(paragraphMarkRunProperties11);
+
+            Run run6 = new Run();
+
+            RunProperties runProperties6 = new RunProperties();
+            Languages languages17 = new Languages() { Val = "en-US" };
+
+            runProperties6.Append(languages17);
+            Text text6 = new Text();
+            text6.Text = "Hello world!";
+
+            run6.Append(runProperties6);
+            run6.Append(text6);
+
+            paragraph11.Append(paragraphProperties11);
+            paragraph11.Append(run6);
+
+            Paragraph paragraph12 = new Paragraph() { RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties12 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties12 = new ParagraphMarkRunProperties();
+            Languages languages18 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties12.Append(languages18);
+
+            paragraphProperties12.Append(paragraphMarkRunProperties12);
             BookmarkStart bookmarkStart1 = new BookmarkStart() { Name = "_GoBack", Id = "0" };
             BookmarkEnd bookmarkEnd1 = new BookmarkEnd() { Id = "0" };
-            ProofError proofError2 = new ProofError() { Type = ProofingErrorValues.SpellEnd };
 
-            paragraph3.Append(paragraphProperties3);
-            paragraph3.Append(proofError1);
-            paragraph3.Append(run3);
-            paragraph3.Append(bookmarkStart1);
-            paragraph3.Append(bookmarkEnd1);
-            paragraph3.Append(proofError2);
+            paragraph12.Append(paragraphProperties12);
+            paragraph12.Append(bookmarkStart1);
+            paragraph12.Append(bookmarkEnd1);
 
-            SectionProperties sectionProperties1 = new SectionProperties() { RsidRPr = "00BD2D53", RsidR = "00381F0B" };
+            Paragraph paragraph13 = new Paragraph() { RsidParagraphMarkRevision = "006D65EC", RsidParagraphAddition = "006D65EC", RsidRunAdditionDefault = "006D65EC" };
+
+            ParagraphProperties paragraphProperties13 = new ParagraphProperties();
+
+            ParagraphMarkRunProperties paragraphMarkRunProperties13 = new ParagraphMarkRunProperties();
+            Languages languages19 = new Languages() { Val = "en-US" };
+
+            paragraphMarkRunProperties13.Append(languages19);
+
+            paragraphProperties13.Append(paragraphMarkRunProperties13);
+
+            paragraph13.Append(paragraphProperties13);
+
+            SectionProperties sectionProperties1 = new SectionProperties() { RsidRPr = "006D65EC", RsidR = "006D65EC" };
             PageSize pageSize1 = new PageSize() { Width = (UInt32Value)11906U, Height = (UInt32Value)16838U };
             PageMargin pageMargin1 = new PageMargin() { Top = 1134, Right = (UInt32Value)850U, Bottom = 1134, Left = (UInt32Value)1701U, Header = (UInt32Value)708U, Footer = (UInt32Value)708U, Gutter = (UInt32Value)0U };
             Columns columns1 = new Columns() { Space = "708" };
@@ -276,6 +395,16 @@ namespace MailSender.Reports
             body1.Append(paragraph1);
             body1.Append(paragraph2);
             body1.Append(paragraph3);
+            body1.Append(paragraph4);
+            body1.Append(paragraph5);
+            body1.Append(paragraph6);
+            body1.Append(paragraph7);
+            body1.Append(paragraph8);
+            body1.Append(paragraph9);
+            body1.Append(paragraph10);
+            body1.Append(paragraph11);
+            body1.Append(paragraph12);
+            body1.Append(paragraph13);
             body1.Append(sectionProperties1);
 
             document1.Append(body1);
@@ -286,14 +415,12 @@ namespace MailSender.Reports
         // Generates content of webSettingsPart1.
         private void GenerateWebSettingsPart1Content(WebSettingsPart webSettingsPart1)
         {
-            WebSettings webSettings1 = new WebSettings() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid" } };
+            WebSettings webSettings1 = new WebSettings() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15" } };
             webSettings1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
             webSettings1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
             webSettings1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
             webSettings1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             webSettings1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
-            webSettings1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
-            webSettings1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
             OptimizeForBrowser optimizeForBrowser1 = new OptimizeForBrowser();
             AllowPNG allowPNG1 = new AllowPNG();
 
@@ -306,7 +433,7 @@ namespace MailSender.Reports
         // Generates content of documentSettingsPart1.
         private void GenerateDocumentSettingsPart1Content(DocumentSettingsPart documentSettingsPart1)
         {
-            Settings settings1 = new Settings() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid" } };
+            Settings settings1 = new Settings() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15" } };
             settings1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
             settings1.AddNamespaceDeclaration("o", "urn:schemas-microsoft-com:office:office");
             settings1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
@@ -316,8 +443,6 @@ namespace MailSender.Reports
             settings1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
             settings1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             settings1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
-            settings1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
-            settings1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
             settings1.AddNamespaceDeclaration("sl", "http://schemas.openxmlformats.org/schemaLibrary/2006/main");
             Zoom zoom1 = new Zoom() { Percent = "100" };
             ProofState proofState1 = new ProofState() { Spelling = ProofingStateValues.Clean, Grammar = ProofingStateValues.Clean };
@@ -330,29 +455,25 @@ namespace MailSender.Reports
             CompatibilitySetting compatibilitySetting3 = new CompatibilitySetting() { Name = CompatSettingNameValues.EnableOpenTypeFeatures, Uri = "http://schemas.microsoft.com/office/word", Val = "1" };
             CompatibilitySetting compatibilitySetting4 = new CompatibilitySetting() { Name = CompatSettingNameValues.DoNotFlipMirrorIndents, Uri = "http://schemas.microsoft.com/office/word", Val = "1" };
             CompatibilitySetting compatibilitySetting5 = new CompatibilitySetting() { Name = CompatSettingNameValues.DifferentiateMultirowTableHeaders, Uri = "http://schemas.microsoft.com/office/word", Val = "1" };
-            CompatibilitySetting compatibilitySetting6 = new CompatibilitySetting() { Name = new EnumValue<CompatSettingNameValues>() { InnerText = "useWord2013TrackBottomHyphenation" }, Uri = "http://schemas.microsoft.com/office/word", Val = "0" };
 
             compatibility1.Append(compatibilitySetting1);
             compatibility1.Append(compatibilitySetting2);
             compatibility1.Append(compatibilitySetting3);
             compatibility1.Append(compatibilitySetting4);
             compatibility1.Append(compatibilitySetting5);
-            compatibility1.Append(compatibilitySetting6);
 
             Rsids rsids1 = new Rsids();
-            RsidRoot rsidRoot1 = new RsidRoot() { Val = "00285B1A" };
-            Rsid rsid1 = new Rsid() { Val = "00057E8C" };
-            Rsid rsid2 = new Rsid() { Val = "00285B1A" };
-            Rsid rsid3 = new Rsid() { Val = "00381F0B" };
-            Rsid rsid4 = new Rsid() { Val = "008D68B1" };
-            Rsid rsid5 = new Rsid() { Val = "00BD2D53" };
+            RsidRoot rsidRoot1 = new RsidRoot() { Val = "00345E46" };
+            Rsid rsid1 = new Rsid() { Val = "00001FCB" };
+            Rsid rsid2 = new Rsid() { Val = "00345E46" };
+            Rsid rsid3 = new Rsid() { Val = "006D65EC" };
+            Rsid rsid4 = new Rsid() { Val = "009F7143" };
 
             rsids1.Append(rsidRoot1);
             rsids1.Append(rsid1);
             rsids1.Append(rsid2);
             rsids1.Append(rsid3);
             rsids1.Append(rsid4);
-            rsids1.Append(rsid5);
 
             M.MathProperties mathProperties1 = new M.MathProperties();
             M.MathFont mathFont1 = new M.MathFont() { Val = "Cambria Math" };
@@ -393,9 +514,8 @@ namespace MailSender.Reports
             shapeDefaults1.Append(shapeLayout1);
             DecimalSymbol decimalSymbol1 = new DecimalSymbol() { Val = "," };
             ListSeparator listSeparator1 = new ListSeparator() { Val = ";" };
-            W14.DocumentId documentId1 = new W14.DocumentId() { Val = "26A2C6BB" };
             W15.ChartTrackingRefBased chartTrackingRefBased1 = new W15.ChartTrackingRefBased();
-            W15.PersistentDocumentId persistentDocumentId1 = new W15.PersistentDocumentId() { Val = "{DFD9CA3B-EB49-4C8D-916D-47B082F2343B}" };
+            W15.PersistentDocumentId persistentDocumentId1 = new W15.PersistentDocumentId() { Val = "{B2505554-169D-49C8-8405-231E99C02FFA}" };
 
             settings1.Append(zoom1);
             settings1.Append(proofState1);
@@ -409,7 +529,6 @@ namespace MailSender.Reports
             settings1.Append(shapeDefaults1);
             settings1.Append(decimalSymbol1);
             settings1.Append(listSeparator1);
-            settings1.Append(documentId1);
             settings1.Append(chartTrackingRefBased1);
             settings1.Append(persistentDocumentId1);
 
@@ -419,29 +538,27 @@ namespace MailSender.Reports
         // Generates content of styleDefinitionsPart1.
         private void GenerateStyleDefinitionsPart1Content(StyleDefinitionsPart styleDefinitionsPart1)
         {
-            Styles styles1 = new Styles() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid" } };
+            Styles styles1 = new Styles() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15" } };
             styles1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
             styles1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
             styles1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
             styles1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             styles1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
-            styles1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
-            styles1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
 
             DocDefaults docDefaults1 = new DocDefaults();
 
             RunPropertiesDefault runPropertiesDefault1 = new RunPropertiesDefault();
 
             RunPropertiesBaseStyle runPropertiesBaseStyle1 = new RunPropertiesBaseStyle();
-            RunFonts runFonts3 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorHighAnsi, HighAnsiTheme = ThemeFontValues.MinorHighAnsi, EastAsiaTheme = ThemeFontValues.MinorHighAnsi, ComplexScriptTheme = ThemeFontValues.MinorBidi };
-            FontSize fontSize3 = new FontSize() { Val = "22" };
-            FontSizeComplexScript fontSizeComplexScript3 = new FontSizeComplexScript() { Val = "22" };
-            Languages languages7 = new Languages() { Val = "ru-RU", EastAsia = "en-US", Bidi = "ar-SA" };
+            RunFonts runFonts1 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorHighAnsi, HighAnsiTheme = ThemeFontValues.MinorHighAnsi, EastAsiaTheme = ThemeFontValues.MinorHighAnsi, ComplexScriptTheme = ThemeFontValues.MinorBidi };
+            FontSize fontSize1 = new FontSize() { Val = "22" };
+            FontSizeComplexScript fontSizeComplexScript1 = new FontSizeComplexScript() { Val = "22" };
+            Languages languages20 = new Languages() { Val = "ru-RU", EastAsia = "en-US", Bidi = "ar-SA" };
 
-            runPropertiesBaseStyle1.Append(runFonts3);
-            runPropertiesBaseStyle1.Append(fontSize3);
-            runPropertiesBaseStyle1.Append(fontSizeComplexScript3);
-            runPropertiesBaseStyle1.Append(languages7);
+            runPropertiesBaseStyle1.Append(runFonts1);
+            runPropertiesBaseStyle1.Append(fontSize1);
+            runPropertiesBaseStyle1.Append(fontSizeComplexScript1);
+            runPropertiesBaseStyle1.Append(languages20);
 
             runPropertiesDefault1.Append(runPropertiesBaseStyle1);
 
@@ -457,7 +574,7 @@ namespace MailSender.Reports
             docDefaults1.Append(runPropertiesDefault1);
             docDefaults1.Append(paragraphPropertiesDefault1);
 
-            LatentStyles latentStyles1 = new LatentStyles() { DefaultLockedState = false, DefaultUiPriority = 99, DefaultSemiHidden = false, DefaultUnhideWhenUsed = false, DefaultPrimaryStyle = false, Count = 376 };
+            LatentStyles latentStyles1 = new LatentStyles() { DefaultLockedState = false, DefaultUiPriority = 99, DefaultSemiHidden = false, DefaultUnhideWhenUsed = false, DefaultPrimaryStyle = false, Count = 371 };
             LatentStyleExceptionInfo latentStyleExceptionInfo1 = new LatentStyleExceptionInfo() { Name = "Normal", UiPriority = 0, PrimaryStyle = true };
             LatentStyleExceptionInfo latentStyleExceptionInfo2 = new LatentStyleExceptionInfo() { Name = "heading 1", UiPriority = 9, PrimaryStyle = true };
             LatentStyleExceptionInfo latentStyleExceptionInfo3 = new LatentStyleExceptionInfo() { Name = "heading 2", UiPriority = 9, SemiHidden = true, UnhideWhenUsed = true, PrimaryStyle = true };
@@ -829,11 +946,6 @@ namespace MailSender.Reports
             LatentStyleExceptionInfo latentStyleExceptionInfo369 = new LatentStyleExceptionInfo() { Name = "List Table 5 Dark Accent 6", UiPriority = 50 };
             LatentStyleExceptionInfo latentStyleExceptionInfo370 = new LatentStyleExceptionInfo() { Name = "List Table 6 Colorful Accent 6", UiPriority = 51 };
             LatentStyleExceptionInfo latentStyleExceptionInfo371 = new LatentStyleExceptionInfo() { Name = "List Table 7 Colorful Accent 6", UiPriority = 52 };
-            LatentStyleExceptionInfo latentStyleExceptionInfo372 = new LatentStyleExceptionInfo() { Name = "Mention", SemiHidden = true, UnhideWhenUsed = true };
-            LatentStyleExceptionInfo latentStyleExceptionInfo373 = new LatentStyleExceptionInfo() { Name = "Smart Hyperlink", SemiHidden = true, UnhideWhenUsed = true };
-            LatentStyleExceptionInfo latentStyleExceptionInfo374 = new LatentStyleExceptionInfo() { Name = "Hashtag", SemiHidden = true, UnhideWhenUsed = true };
-            LatentStyleExceptionInfo latentStyleExceptionInfo375 = new LatentStyleExceptionInfo() { Name = "Unresolved Mention", SemiHidden = true, UnhideWhenUsed = true };
-            LatentStyleExceptionInfo latentStyleExceptionInfo376 = new LatentStyleExceptionInfo() { Name = "Smart Link", SemiHidden = true, UnhideWhenUsed = true };
 
             latentStyles1.Append(latentStyleExceptionInfo1);
             latentStyles1.Append(latentStyleExceptionInfo2);
@@ -1206,34 +1318,13 @@ namespace MailSender.Reports
             latentStyles1.Append(latentStyleExceptionInfo369);
             latentStyles1.Append(latentStyleExceptionInfo370);
             latentStyles1.Append(latentStyleExceptionInfo371);
-            latentStyles1.Append(latentStyleExceptionInfo372);
-            latentStyles1.Append(latentStyleExceptionInfo373);
-            latentStyles1.Append(latentStyleExceptionInfo374);
-            latentStyles1.Append(latentStyleExceptionInfo375);
-            latentStyles1.Append(latentStyleExceptionInfo376);
 
             Style style1 = new Style() { Type = StyleValues.Paragraph, StyleId = "a", Default = true };
             StyleName styleName1 = new StyleName() { Val = "Normal" };
             PrimaryStyle primaryStyle1 = new PrimaryStyle();
-            Rsid rsid6 = new Rsid() { Val = "008D68B1" };
-
-            StyleParagraphProperties styleParagraphProperties1 = new StyleParagraphProperties();
-            SpacingBetweenLines spacingBetweenLines2 = new SpacingBetweenLines() { Line = "360", LineRule = LineSpacingRuleValues.Auto };
-
-            styleParagraphProperties1.Append(spacingBetweenLines2);
-
-            StyleRunProperties styleRunProperties1 = new StyleRunProperties();
-            RunFonts runFonts4 = new RunFonts() { Ascii = "Times New Roman", HighAnsi = "Times New Roman" };
-            FontSize fontSize4 = new FontSize() { Val = "28" };
-
-            styleRunProperties1.Append(runFonts4);
-            styleRunProperties1.Append(fontSize4);
 
             style1.Append(styleName1);
             style1.Append(primaryStyle1);
-            style1.Append(rsid6);
-            style1.Append(styleParagraphProperties1);
-            style1.Append(styleRunProperties1);
 
             Style style2 = new Style() { Type = StyleValues.Character, StyleId = "a0", Default = true };
             StyleName styleName2 = new StyleName() { Val = "Default Paragraph Font" };
@@ -1327,7 +1418,7 @@ namespace MailSender.Reports
             light2Color1.Append(rgbColorModelHex2);
 
             A.Accent1Color accent1Color1 = new A.Accent1Color();
-            A.RgbColorModelHex rgbColorModelHex3 = new A.RgbColorModelHex() { Val = "4472C4" };
+            A.RgbColorModelHex rgbColorModelHex3 = new A.RgbColorModelHex() { Val = "5B9BD5" };
 
             accent1Color1.Append(rgbColorModelHex3);
 
@@ -1347,7 +1438,7 @@ namespace MailSender.Reports
             accent4Color1.Append(rgbColorModelHex6);
 
             A.Accent5Color accent5Color1 = new A.Accent5Color();
-            A.RgbColorModelHex rgbColorModelHex7 = new A.RgbColorModelHex() { Val = "5B9BD5" };
+            A.RgbColorModelHex rgbColorModelHex7 = new A.RgbColorModelHex() { Val = "4472C4" };
 
             accent5Color1.Append(rgbColorModelHex7);
 
@@ -1385,9 +1476,9 @@ namespace MailSender.Reports
             A.LatinFont latinFont1 = new A.LatinFont() { Typeface = "Calibri Light", Panose = "020F0302020204030204" };
             A.EastAsianFont eastAsianFont1 = new A.EastAsianFont() { Typeface = "" };
             A.ComplexScriptFont complexScriptFont1 = new A.ComplexScriptFont() { Typeface = "" };
-            A.SupplementalFont supplementalFont1 = new A.SupplementalFont() { Script = "Jpan", Typeface = "游ゴシック Light" };
+            A.SupplementalFont supplementalFont1 = new A.SupplementalFont() { Script = "Jpan", Typeface = "ＭＳ ゴシック" };
             A.SupplementalFont supplementalFont2 = new A.SupplementalFont() { Script = "Hang", Typeface = "맑은 고딕" };
-            A.SupplementalFont supplementalFont3 = new A.SupplementalFont() { Script = "Hans", Typeface = "等线 Light" };
+            A.SupplementalFont supplementalFont3 = new A.SupplementalFont() { Script = "Hans", Typeface = "宋体" };
             A.SupplementalFont supplementalFont4 = new A.SupplementalFont() { Script = "Hant", Typeface = "新細明體" };
             A.SupplementalFont supplementalFont5 = new A.SupplementalFont() { Script = "Arab", Typeface = "Times New Roman" };
             A.SupplementalFont supplementalFont6 = new A.SupplementalFont() { Script = "Hebr", Typeface = "Times New Roman" };
@@ -1415,23 +1506,6 @@ namespace MailSender.Reports
             A.SupplementalFont supplementalFont28 = new A.SupplementalFont() { Script = "Viet", Typeface = "Times New Roman" };
             A.SupplementalFont supplementalFont29 = new A.SupplementalFont() { Script = "Uigh", Typeface = "Microsoft Uighur" };
             A.SupplementalFont supplementalFont30 = new A.SupplementalFont() { Script = "Geor", Typeface = "Sylfaen" };
-            A.SupplementalFont supplementalFont31 = new A.SupplementalFont() { Script = "Armn", Typeface = "Arial" };
-            A.SupplementalFont supplementalFont32 = new A.SupplementalFont() { Script = "Bugi", Typeface = "Leelawadee UI" };
-            A.SupplementalFont supplementalFont33 = new A.SupplementalFont() { Script = "Bopo", Typeface = "Microsoft JhengHei" };
-            A.SupplementalFont supplementalFont34 = new A.SupplementalFont() { Script = "Java", Typeface = "Javanese Text" };
-            A.SupplementalFont supplementalFont35 = new A.SupplementalFont() { Script = "Lisu", Typeface = "Segoe UI" };
-            A.SupplementalFont supplementalFont36 = new A.SupplementalFont() { Script = "Mymr", Typeface = "Myanmar Text" };
-            A.SupplementalFont supplementalFont37 = new A.SupplementalFont() { Script = "Nkoo", Typeface = "Ebrima" };
-            A.SupplementalFont supplementalFont38 = new A.SupplementalFont() { Script = "Olck", Typeface = "Nirmala UI" };
-            A.SupplementalFont supplementalFont39 = new A.SupplementalFont() { Script = "Osma", Typeface = "Ebrima" };
-            A.SupplementalFont supplementalFont40 = new A.SupplementalFont() { Script = "Phag", Typeface = "Phagspa" };
-            A.SupplementalFont supplementalFont41 = new A.SupplementalFont() { Script = "Syrn", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont42 = new A.SupplementalFont() { Script = "Syrj", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont43 = new A.SupplementalFont() { Script = "Syre", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont44 = new A.SupplementalFont() { Script = "Sora", Typeface = "Nirmala UI" };
-            A.SupplementalFont supplementalFont45 = new A.SupplementalFont() { Script = "Tale", Typeface = "Microsoft Tai Le" };
-            A.SupplementalFont supplementalFont46 = new A.SupplementalFont() { Script = "Talu", Typeface = "Microsoft New Tai Lue" };
-            A.SupplementalFont supplementalFont47 = new A.SupplementalFont() { Script = "Tfng", Typeface = "Ebrima" };
 
             majorFont1.Append(latinFont1);
             majorFont1.Append(eastAsianFont1);
@@ -1466,79 +1540,62 @@ namespace MailSender.Reports
             majorFont1.Append(supplementalFont28);
             majorFont1.Append(supplementalFont29);
             majorFont1.Append(supplementalFont30);
-            majorFont1.Append(supplementalFont31);
-            majorFont1.Append(supplementalFont32);
-            majorFont1.Append(supplementalFont33);
-            majorFont1.Append(supplementalFont34);
-            majorFont1.Append(supplementalFont35);
-            majorFont1.Append(supplementalFont36);
-            majorFont1.Append(supplementalFont37);
-            majorFont1.Append(supplementalFont38);
-            majorFont1.Append(supplementalFont39);
-            majorFont1.Append(supplementalFont40);
-            majorFont1.Append(supplementalFont41);
-            majorFont1.Append(supplementalFont42);
-            majorFont1.Append(supplementalFont43);
-            majorFont1.Append(supplementalFont44);
-            majorFont1.Append(supplementalFont45);
-            majorFont1.Append(supplementalFont46);
-            majorFont1.Append(supplementalFont47);
 
             A.MinorFont minorFont1 = new A.MinorFont();
             A.LatinFont latinFont2 = new A.LatinFont() { Typeface = "Calibri", Panose = "020F0502020204030204" };
             A.EastAsianFont eastAsianFont2 = new A.EastAsianFont() { Typeface = "" };
             A.ComplexScriptFont complexScriptFont2 = new A.ComplexScriptFont() { Typeface = "" };
-            A.SupplementalFont supplementalFont48 = new A.SupplementalFont() { Script = "Jpan", Typeface = "游明朝" };
-            A.SupplementalFont supplementalFont49 = new A.SupplementalFont() { Script = "Hang", Typeface = "맑은 고딕" };
-            A.SupplementalFont supplementalFont50 = new A.SupplementalFont() { Script = "Hans", Typeface = "等线" };
-            A.SupplementalFont supplementalFont51 = new A.SupplementalFont() { Script = "Hant", Typeface = "新細明體" };
-            A.SupplementalFont supplementalFont52 = new A.SupplementalFont() { Script = "Arab", Typeface = "Arial" };
-            A.SupplementalFont supplementalFont53 = new A.SupplementalFont() { Script = "Hebr", Typeface = "Arial" };
-            A.SupplementalFont supplementalFont54 = new A.SupplementalFont() { Script = "Thai", Typeface = "Cordia New" };
-            A.SupplementalFont supplementalFont55 = new A.SupplementalFont() { Script = "Ethi", Typeface = "Nyala" };
-            A.SupplementalFont supplementalFont56 = new A.SupplementalFont() { Script = "Beng", Typeface = "Vrinda" };
-            A.SupplementalFont supplementalFont57 = new A.SupplementalFont() { Script = "Gujr", Typeface = "Shruti" };
-            A.SupplementalFont supplementalFont58 = new A.SupplementalFont() { Script = "Khmr", Typeface = "DaunPenh" };
-            A.SupplementalFont supplementalFont59 = new A.SupplementalFont() { Script = "Knda", Typeface = "Tunga" };
-            A.SupplementalFont supplementalFont60 = new A.SupplementalFont() { Script = "Guru", Typeface = "Raavi" };
-            A.SupplementalFont supplementalFont61 = new A.SupplementalFont() { Script = "Cans", Typeface = "Euphemia" };
-            A.SupplementalFont supplementalFont62 = new A.SupplementalFont() { Script = "Cher", Typeface = "Plantagenet Cherokee" };
-            A.SupplementalFont supplementalFont63 = new A.SupplementalFont() { Script = "Yiii", Typeface = "Microsoft Yi Baiti" };
-            A.SupplementalFont supplementalFont64 = new A.SupplementalFont() { Script = "Tibt", Typeface = "Microsoft Himalaya" };
-            A.SupplementalFont supplementalFont65 = new A.SupplementalFont() { Script = "Thaa", Typeface = "MV Boli" };
-            A.SupplementalFont supplementalFont66 = new A.SupplementalFont() { Script = "Deva", Typeface = "Mangal" };
-            A.SupplementalFont supplementalFont67 = new A.SupplementalFont() { Script = "Telu", Typeface = "Gautami" };
-            A.SupplementalFont supplementalFont68 = new A.SupplementalFont() { Script = "Taml", Typeface = "Latha" };
-            A.SupplementalFont supplementalFont69 = new A.SupplementalFont() { Script = "Syrc", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont70 = new A.SupplementalFont() { Script = "Orya", Typeface = "Kalinga" };
-            A.SupplementalFont supplementalFont71 = new A.SupplementalFont() { Script = "Mlym", Typeface = "Kartika" };
-            A.SupplementalFont supplementalFont72 = new A.SupplementalFont() { Script = "Laoo", Typeface = "DokChampa" };
-            A.SupplementalFont supplementalFont73 = new A.SupplementalFont() { Script = "Sinh", Typeface = "Iskoola Pota" };
-            A.SupplementalFont supplementalFont74 = new A.SupplementalFont() { Script = "Mong", Typeface = "Mongolian Baiti" };
-            A.SupplementalFont supplementalFont75 = new A.SupplementalFont() { Script = "Viet", Typeface = "Arial" };
-            A.SupplementalFont supplementalFont76 = new A.SupplementalFont() { Script = "Uigh", Typeface = "Microsoft Uighur" };
-            A.SupplementalFont supplementalFont77 = new A.SupplementalFont() { Script = "Geor", Typeface = "Sylfaen" };
-            A.SupplementalFont supplementalFont78 = new A.SupplementalFont() { Script = "Armn", Typeface = "Arial" };
-            A.SupplementalFont supplementalFont79 = new A.SupplementalFont() { Script = "Bugi", Typeface = "Leelawadee UI" };
-            A.SupplementalFont supplementalFont80 = new A.SupplementalFont() { Script = "Bopo", Typeface = "Microsoft JhengHei" };
-            A.SupplementalFont supplementalFont81 = new A.SupplementalFont() { Script = "Java", Typeface = "Javanese Text" };
-            A.SupplementalFont supplementalFont82 = new A.SupplementalFont() { Script = "Lisu", Typeface = "Segoe UI" };
-            A.SupplementalFont supplementalFont83 = new A.SupplementalFont() { Script = "Mymr", Typeface = "Myanmar Text" };
-            A.SupplementalFont supplementalFont84 = new A.SupplementalFont() { Script = "Nkoo", Typeface = "Ebrima" };
-            A.SupplementalFont supplementalFont85 = new A.SupplementalFont() { Script = "Olck", Typeface = "Nirmala UI" };
-            A.SupplementalFont supplementalFont86 = new A.SupplementalFont() { Script = "Osma", Typeface = "Ebrima" };
-            A.SupplementalFont supplementalFont87 = new A.SupplementalFont() { Script = "Phag", Typeface = "Phagspa" };
-            A.SupplementalFont supplementalFont88 = new A.SupplementalFont() { Script = "Syrn", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont89 = new A.SupplementalFont() { Script = "Syrj", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont90 = new A.SupplementalFont() { Script = "Syre", Typeface = "Estrangelo Edessa" };
-            A.SupplementalFont supplementalFont91 = new A.SupplementalFont() { Script = "Sora", Typeface = "Nirmala UI" };
-            A.SupplementalFont supplementalFont92 = new A.SupplementalFont() { Script = "Tale", Typeface = "Microsoft Tai Le" };
-            A.SupplementalFont supplementalFont93 = new A.SupplementalFont() { Script = "Talu", Typeface = "Microsoft New Tai Lue" };
-            A.SupplementalFont supplementalFont94 = new A.SupplementalFont() { Script = "Tfng", Typeface = "Ebrima" };
+            A.SupplementalFont supplementalFont31 = new A.SupplementalFont() { Script = "Jpan", Typeface = "ＭＳ 明朝" };
+            A.SupplementalFont supplementalFont32 = new A.SupplementalFont() { Script = "Hang", Typeface = "맑은 고딕" };
+            A.SupplementalFont supplementalFont33 = new A.SupplementalFont() { Script = "Hans", Typeface = "宋体" };
+            A.SupplementalFont supplementalFont34 = new A.SupplementalFont() { Script = "Hant", Typeface = "新細明體" };
+            A.SupplementalFont supplementalFont35 = new A.SupplementalFont() { Script = "Arab", Typeface = "Arial" };
+            A.SupplementalFont supplementalFont36 = new A.SupplementalFont() { Script = "Hebr", Typeface = "Arial" };
+            A.SupplementalFont supplementalFont37 = new A.SupplementalFont() { Script = "Thai", Typeface = "Cordia New" };
+            A.SupplementalFont supplementalFont38 = new A.SupplementalFont() { Script = "Ethi", Typeface = "Nyala" };
+            A.SupplementalFont supplementalFont39 = new A.SupplementalFont() { Script = "Beng", Typeface = "Vrinda" };
+            A.SupplementalFont supplementalFont40 = new A.SupplementalFont() { Script = "Gujr", Typeface = "Shruti" };
+            A.SupplementalFont supplementalFont41 = new A.SupplementalFont() { Script = "Khmr", Typeface = "DaunPenh" };
+            A.SupplementalFont supplementalFont42 = new A.SupplementalFont() { Script = "Knda", Typeface = "Tunga" };
+            A.SupplementalFont supplementalFont43 = new A.SupplementalFont() { Script = "Guru", Typeface = "Raavi" };
+            A.SupplementalFont supplementalFont44 = new A.SupplementalFont() { Script = "Cans", Typeface = "Euphemia" };
+            A.SupplementalFont supplementalFont45 = new A.SupplementalFont() { Script = "Cher", Typeface = "Plantagenet Cherokee" };
+            A.SupplementalFont supplementalFont46 = new A.SupplementalFont() { Script = "Yiii", Typeface = "Microsoft Yi Baiti" };
+            A.SupplementalFont supplementalFont47 = new A.SupplementalFont() { Script = "Tibt", Typeface = "Microsoft Himalaya" };
+            A.SupplementalFont supplementalFont48 = new A.SupplementalFont() { Script = "Thaa", Typeface = "MV Boli" };
+            A.SupplementalFont supplementalFont49 = new A.SupplementalFont() { Script = "Deva", Typeface = "Mangal" };
+            A.SupplementalFont supplementalFont50 = new A.SupplementalFont() { Script = "Telu", Typeface = "Gautami" };
+            A.SupplementalFont supplementalFont51 = new A.SupplementalFont() { Script = "Taml", Typeface = "Latha" };
+            A.SupplementalFont supplementalFont52 = new A.SupplementalFont() { Script = "Syrc", Typeface = "Estrangelo Edessa" };
+            A.SupplementalFont supplementalFont53 = new A.SupplementalFont() { Script = "Orya", Typeface = "Kalinga" };
+            A.SupplementalFont supplementalFont54 = new A.SupplementalFont() { Script = "Mlym", Typeface = "Kartika" };
+            A.SupplementalFont supplementalFont55 = new A.SupplementalFont() { Script = "Laoo", Typeface = "DokChampa" };
+            A.SupplementalFont supplementalFont56 = new A.SupplementalFont() { Script = "Sinh", Typeface = "Iskoola Pota" };
+            A.SupplementalFont supplementalFont57 = new A.SupplementalFont() { Script = "Mong", Typeface = "Mongolian Baiti" };
+            A.SupplementalFont supplementalFont58 = new A.SupplementalFont() { Script = "Viet", Typeface = "Arial" };
+            A.SupplementalFont supplementalFont59 = new A.SupplementalFont() { Script = "Uigh", Typeface = "Microsoft Uighur" };
+            A.SupplementalFont supplementalFont60 = new A.SupplementalFont() { Script = "Geor", Typeface = "Sylfaen" };
 
             minorFont1.Append(latinFont2);
             minorFont1.Append(eastAsianFont2);
             minorFont1.Append(complexScriptFont2);
+            minorFont1.Append(supplementalFont31);
+            minorFont1.Append(supplementalFont32);
+            minorFont1.Append(supplementalFont33);
+            minorFont1.Append(supplementalFont34);
+            minorFont1.Append(supplementalFont35);
+            minorFont1.Append(supplementalFont36);
+            minorFont1.Append(supplementalFont37);
+            minorFont1.Append(supplementalFont38);
+            minorFont1.Append(supplementalFont39);
+            minorFont1.Append(supplementalFont40);
+            minorFont1.Append(supplementalFont41);
+            minorFont1.Append(supplementalFont42);
+            minorFont1.Append(supplementalFont43);
+            minorFont1.Append(supplementalFont44);
+            minorFont1.Append(supplementalFont45);
+            minorFont1.Append(supplementalFont46);
+            minorFont1.Append(supplementalFont47);
             minorFont1.Append(supplementalFont48);
             minorFont1.Append(supplementalFont49);
             minorFont1.Append(supplementalFont50);
@@ -1552,40 +1609,6 @@ namespace MailSender.Reports
             minorFont1.Append(supplementalFont58);
             minorFont1.Append(supplementalFont59);
             minorFont1.Append(supplementalFont60);
-            minorFont1.Append(supplementalFont61);
-            minorFont1.Append(supplementalFont62);
-            minorFont1.Append(supplementalFont63);
-            minorFont1.Append(supplementalFont64);
-            minorFont1.Append(supplementalFont65);
-            minorFont1.Append(supplementalFont66);
-            minorFont1.Append(supplementalFont67);
-            minorFont1.Append(supplementalFont68);
-            minorFont1.Append(supplementalFont69);
-            minorFont1.Append(supplementalFont70);
-            minorFont1.Append(supplementalFont71);
-            minorFont1.Append(supplementalFont72);
-            minorFont1.Append(supplementalFont73);
-            minorFont1.Append(supplementalFont74);
-            minorFont1.Append(supplementalFont75);
-            minorFont1.Append(supplementalFont76);
-            minorFont1.Append(supplementalFont77);
-            minorFont1.Append(supplementalFont78);
-            minorFont1.Append(supplementalFont79);
-            minorFont1.Append(supplementalFont80);
-            minorFont1.Append(supplementalFont81);
-            minorFont1.Append(supplementalFont82);
-            minorFont1.Append(supplementalFont83);
-            minorFont1.Append(supplementalFont84);
-            minorFont1.Append(supplementalFont85);
-            minorFont1.Append(supplementalFont86);
-            minorFont1.Append(supplementalFont87);
-            minorFont1.Append(supplementalFont88);
-            minorFont1.Append(supplementalFont89);
-            minorFont1.Append(supplementalFont90);
-            minorFont1.Append(supplementalFont91);
-            minorFont1.Append(supplementalFont92);
-            minorFont1.Append(supplementalFont93);
-            minorFont1.Append(supplementalFont94);
 
             fontScheme1.Append(majorFont1);
             fontScheme1.Append(minorFont1);
@@ -1891,21 +1914,19 @@ namespace MailSender.Reports
         // Generates content of fontTablePart1.
         private void GenerateFontTablePart1Content(FontTablePart fontTablePart1)
         {
-            Fonts fonts1 = new Fonts() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid" } };
+            Fonts fonts1 = new Fonts() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15" } };
             fonts1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
             fonts1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
             fonts1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
             fonts1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
             fonts1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
-            fonts1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
-            fonts1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
 
             Font font1 = new Font() { Name = "Calibri" };
             Panose1Number panose1Number1 = new Panose1Number() { Val = "020F0502020204030204" };
             FontCharSet fontCharSet1 = new FontCharSet() { Val = "CC" };
             FontFamily fontFamily1 = new FontFamily() { Val = FontFamilyValues.Swiss };
             Pitch pitch1 = new Pitch() { Val = FontPitchValues.Variable };
-            FontSignature fontSignature1 = new FontSignature() { UnicodeSignature0 = "E4002EFF", UnicodeSignature1 = "C000247B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
+            FontSignature fontSignature1 = new FontSignature() { UnicodeSignature0 = "E00002FF", UnicodeSignature1 = "4000ACFF", UnicodeSignature2 = "00000001", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000019F", CodePageSignature1 = "00000000" };
 
             font1.Append(panose1Number1);
             font1.Append(fontCharSet1);
@@ -1918,7 +1939,7 @@ namespace MailSender.Reports
             FontCharSet fontCharSet2 = new FontCharSet() { Val = "CC" };
             FontFamily fontFamily2 = new FontFamily() { Val = FontFamilyValues.Roman };
             Pitch pitch2 = new Pitch() { Val = FontPitchValues.Variable };
-            FontSignature fontSignature2 = new FontSignature() { UnicodeSignature0 = "E0002EFF", UnicodeSignature1 = "C000785B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
+            FontSignature fontSignature2 = new FontSignature() { UnicodeSignature0 = "E0002EFF", UnicodeSignature1 = "C0007843", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
 
             font2.Append(panose1Number2);
             font2.Append(fontCharSet2);
@@ -1926,12 +1947,12 @@ namespace MailSender.Reports
             font2.Append(pitch2);
             font2.Append(fontSignature2);
 
-            Font font3 = new Font() { Name = "Arial Black" };
-            Panose1Number panose1Number3 = new Panose1Number() { Val = "020B0A04020102020204" };
+            Font font3 = new Font() { Name = "Calibri Light" };
+            Panose1Number panose1Number3 = new Panose1Number() { Val = "020F0302020204030204" };
             FontCharSet fontCharSet3 = new FontCharSet() { Val = "CC" };
             FontFamily fontFamily3 = new FontFamily() { Val = FontFamilyValues.Swiss };
             Pitch pitch3 = new Pitch() { Val = FontPitchValues.Variable };
-            FontSignature fontSignature3 = new FontSignature() { UnicodeSignature0 = "A00002AF", UnicodeSignature1 = "400078FB", UnicodeSignature2 = "00000000", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000009F", CodePageSignature1 = "00000000" };
+            FontSignature fontSignature3 = new FontSignature() { UnicodeSignature0 = "A00002EF", UnicodeSignature1 = "4000207B", UnicodeSignature2 = "00000000", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000019F", CodePageSignature1 = "00000000" };
 
             font3.Append(panose1Number3);
             font3.Append(fontCharSet3);
@@ -1939,38 +1960,24 @@ namespace MailSender.Reports
             font3.Append(pitch3);
             font3.Append(fontSignature3);
 
-            Font font4 = new Font() { Name = "Calibri Light" };
-            Panose1Number panose1Number4 = new Panose1Number() { Val = "020F0302020204030204" };
-            FontCharSet fontCharSet4 = new FontCharSet() { Val = "CC" };
-            FontFamily fontFamily4 = new FontFamily() { Val = FontFamilyValues.Swiss };
-            Pitch pitch4 = new Pitch() { Val = FontPitchValues.Variable };
-            FontSignature fontSignature4 = new FontSignature() { UnicodeSignature0 = "E4002EFF", UnicodeSignature1 = "C000247B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
-
-            font4.Append(panose1Number4);
-            font4.Append(fontCharSet4);
-            font4.Append(fontFamily4);
-            font4.Append(pitch4);
-            font4.Append(fontSignature4);
-
             fonts1.Append(font1);
             fonts1.Append(font2);
             fonts1.Append(font3);
-            fonts1.Append(font4);
 
             fontTablePart1.Fonts = fonts1;
         }
 
         private void SetPackageProperties(OpenXmlPackage document)
         {
-            document.PackageProperties.Creator = "Павел Шмачилин";
+            document.PackageProperties.Creator = "JoIL Paderina";
             document.PackageProperties.Title = "";
             document.PackageProperties.Subject = "";
             document.PackageProperties.Keywords = "";
             document.PackageProperties.Description = "";
-            document.PackageProperties.Revision = "3";
-            document.PackageProperties.Created = System.Xml.XmlConvert.ToDateTime("2020-02-18T18:47:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
-            document.PackageProperties.Modified = System.Xml.XmlConvert.ToDateTime("2020-02-18T18:47:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
-            document.PackageProperties.LastModifiedBy = "Павел Шмачилин";
+            document.PackageProperties.Revision = "2";
+            document.PackageProperties.Created = System.Xml.XmlConvert.ToDateTime("2020-02-21T12:02:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
+            document.PackageProperties.Modified = System.Xml.XmlConvert.ToDateTime("2020-02-21T12:02:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
+            document.PackageProperties.LastModifiedBy = "JoIL Paderina";
         }
 
 
