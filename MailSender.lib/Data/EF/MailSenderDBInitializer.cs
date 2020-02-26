@@ -16,7 +16,7 @@ namespace MailSender.lib.Data.EF
         {
             _db.Database.EnsureCreated();
             ///если бы освоили миграции, вызывали бы _db.Database.Migrate(); 
-            await SeedAsync(_db.Mails);
+            await SeedAsync(_db.Mails).ConfigureAwait(false);
             await SeedAsync(_db.Servers);
             await SeedAsync(_db.Senders);
             await SeedAsync(_db.Recipients);
@@ -30,12 +30,21 @@ namespace MailSender.lib.Data.EF
                 });
                 await _db.SaveChangesAsync();
             }
-
+            if(!await _db.SchedulerTasks.AnyAsync())
+            {
+                _db.SchedulerTasks.Add(new SchedulerTask
+                {
+                    Time = DateTime.Now.Add(TimeSpan.FromDays(10)), Server = await _db.Servers.FirstOrDefaultAsync(),
+                    Recipient = await _db.MailingList.FirstOrDefaultAsync(), Mail = await _db.Mails.FirstOrDefaultAsync(),
+                    Sender = await _db.Senders.FirstOrDefaultAsync()
+                });
+                await _db.SaveChangesAsync();
+            }
         }
         
         private async Task SeedAsync(DbSet<Mail> Mails)
         {
-            if (await Mails.AnyAsync()) return;
+            if (await Mails.AnyAsync().ConfigureAwait(false)) return;
 
             for (var i = 0; i < 10; i++) Mails.Add(new Mail { Subject = $"Письмо {i}", Body = $"Текст письма {i}" });
             await _db.SaveChangesAsync();

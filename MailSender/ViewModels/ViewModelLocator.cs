@@ -14,6 +14,7 @@ using MailSender.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MailSender.lib.Services.EF;
+using System.Threading.Tasks;
 
 namespace MailSender.ViewModels
 {
@@ -43,7 +44,10 @@ namespace MailSender.ViewModels
 
             services.Register<MailSenderDBInitializer>();
             var db_initializer = (MailSenderDBInitializer) services.GetService(typeof(MailSenderDBInitializer));
-            db_initializer.Initialize();
+            var initialize_task = Task.Run(() => db_initializer.InitializeAsync()); //принудительно создаём поток, 
+            //чтобы не создавать мёртвой блокировки при методе wait, ибо без другого потока основной tread 
+            //замкнет себя
+            initialize_task.Wait();
         }
         public MainWindowViewModel MainWindowModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
     }
