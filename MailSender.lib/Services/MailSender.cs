@@ -6,10 +6,15 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
 {
-    public class MailSender
+    public class MailSenderService : IMailSenderService
+    {
+        public IMailSender GetSender(Server Server) => new MailSender(Server);
+    }
+    public class MailSender : IMailSender
     {
         private readonly Server _Server;
 

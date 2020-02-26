@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MailSender.lib.Services.EF;
 using System.Threading.Tasks;
+using MailSender.lib;
 
 namespace MailSender.ViewModels
 {
@@ -43,6 +44,12 @@ namespace MailSender.ViewModels
             .UseSqlServer(App.Configuration.GetConnectionString("DefaultConnection")).Options);
 
             services.Register<MailSenderDBInitializer>();
+#if DEBUG
+            services.Register<IMailSenderService, DebugMailSenderService>();
+#else
+            services.Register<IMailSenderService, MailSenderService>();
+#endif
+
             var db_initializer = (MailSenderDBInitializer) services.GetService(typeof(MailSenderDBInitializer));
             var initialize_task = Task.Run(() => db_initializer.InitializeAsync()); //принудительно создаём поток, 
             //чтобы не создавать мёртвой блокировки при методе wait, ибо без другого потока основной tread 

@@ -9,17 +9,19 @@ using System.Threading;
 
 namespace MailSender.lib.Services
 {
-    public class MailSchedulerTPL
+    public class MailSchedulerTPL : IMailScheduler
     {
         private readonly ISchedulerTaskStore _TaskStore;
+        private readonly IMailSenderService _MailSenderService;
         private volatile CancellationTokenSource _ProcessTaskCancellation;
 
-        public MailSchedulerTPL(ISchedulerTaskStore TaskStore)
+        public MailSchedulerTPL(ISchedulerTaskStore TaskStore, IMailSenderService MailSenderService)
         {
             _TaskStore = TaskStore;
+            _MailSenderService = MailSenderService;
         }
 
-        public async Task StartAsync()
+        public void  Start()
         {
             var cancellation = new CancellationTokenSource();
             Interlocked.Exchange(ref _ProcessTaskCancellation, cancellation)?.Cancel();
@@ -33,18 +35,27 @@ namespace MailSender.lib.Services
         }
         private async void WaitTaskAsync(SchedulerTask task, CancellationToken Cancel)
         {
+            Cancel.ThrowIfCancellationRequested();
+
             var task_time = task.Time;
             var delta = task.Time.Subtract(DateTime.Now);
 
-            await Task.Delay(delta, Cancel).ConfigureAwait(false);
+            if(delta.TotalSeconds >0)
+                 await Task.Delay(delta, Cancel).ConfigureAwait(false);
+            Cancel.ThrowIfCancellationRequested();
+
 
             await ExecuteTask(task, Cancel);
             _TaskStore.Remove(task.Id);
-           await  StartAsync();
+           await Task.Run(Start, Cancel);
         }
         private async Task ExecuteTask(SchedulerTask task, CancellationToken Cancel)
         {
+            Cancel.ThrowIfCancellationRequested();
 
+            var sender = _MailSenderService.GetSender(task.Server);
+
+            await sender.SendAsync(task.Mail, task.Sender, task.Recipient.Recipients, Cancel);
         }
     }
 }

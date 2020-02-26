@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using MailSender.lib.Entities;
 using System.Threading;
+using MailSender.lib.Services.Interfaces;
+using System.Threading.Tasks;
 
 namespace MailSender.lib
 {
-    public class DebugMailSender
+    public class DebugMailSenderService : IMailSenderService
+    {
+        public IMailSender GetSender(Server Server) => new DebugMailSender(Server);
+    }
+    public class DebugMailSender : IMailSender
     {
         private readonly Server _Server;
 
@@ -26,6 +32,17 @@ namespace MailSender.lib
         {
             foreach (var recipient in To)
                 ThreadPool.QueueUserWorkItem(_ => Send(Message, From, To));
+        }
+        public Task SendAsync(Mail Mail, Sender From, Recipient To)
+        {
+            Send(Mail, From, To);
+            return Task.CompletedTask;
+        }
+        public Task SendAsync(Mail Message, Sender From, IEnumerable<Recipient> To,
+            CancellationToken Cancel = default)
+        {
+            Send(Message, From, To);
+            return Task.CompletedTask;
         }
     }
 }
